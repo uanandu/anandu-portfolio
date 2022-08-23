@@ -8,6 +8,7 @@ import {
   useColorMode,
   Box,
   Image,
+  Link,
 } from "@chakra-ui/react";
 import Head from "next/head";
 
@@ -25,23 +26,28 @@ const Projects = () => {
       title: "Coding Cat",
       description:
         "Coding Sanbox environment to help beginners to code and learn",
-      video:
-        "https://youtu.be/kg0rjyfMspU",
+      image: "https://cdn.discordapp.com/attachments/978673047772991548/1008758286109130803/readme-site.gif",
+      github: "https://github.com/uanandu/Coding_Cat",
+      youtube: "",
     },
     {
       name: "Project #2",
       title: "E-Commerce",
       description: "E-Commerce website to sell wearables",
-      video:
-        "https://cdn.discordapp.com/attachments/978673047772991548/1010895573303427222/favicon.ico",
+      image:
+        "https://cdn.discordapp.com/attachments/978673047772991548/1011642261299273800/group-project.gif",
+      github: "https://github.com/uanandu/project-GROUP-e-commerce",
+      youtube: "",
     },
     {
       name: "Project #3",
       title: "IssueBot",
       description:
         "Web app to keep track of user's issues and remind them to fix them based on priority",
-      video:
-        "https://cdn.discordapp.com/attachments/978673047772991548/1010586215889780886/issue-tracker-project.mp4",
+      image:
+        "https://cdn.discordapp.com/attachments/978673047772991548/1011333620243370155/issue_bot.png",
+      github: "https://github.com/uanandu/Issue-Tracker",
+      youtube: "",
     },
   ];
 
@@ -76,9 +82,15 @@ const Projects = () => {
               >
                 <Text fontSize="xl">{project.name}</Text>
                 <Text fontSize="xl">{project.title}</Text>
-                <video width="100%" height="auto" controls>
-                  <source src={project.video} type="video/mp4" />
-                </video>
+                <Image src={project.image} w="100%" h="auto" />
+                <Link href={project.github}>
+                  <IconButton
+                    ml="3"
+                    icon={<FaGithub />}
+                    // isRound="true"
+                    border={isDark ? "1px solid white" : "1px solid black"}
+                  />
+                </Link>
                 <Text fontSize="lg">{project.description}</Text>
               </Stack>
             );
