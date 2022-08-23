@@ -83,7 +83,7 @@ const Projects = () => {
                 boxShadow={isDark ? "2px 2px 4px 2px white" : "2px 2px 4px 2px black"}
                 borderRadius={10}
                 cursor="pointer"
-
+                transition="all 0.3s ease-in-out"
                 _hover={
                   {
                     boxShadow: isDark ? "2px 4px 8px 4px white" : "2px 4px 8px 4px black",
