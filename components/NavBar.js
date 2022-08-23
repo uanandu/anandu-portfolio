@@ -90,7 +90,7 @@ const NavBar = () => {
           </Button>
           <Button>
             <NextLink href="/talk">
-              <Link color={isDark ? "white" : "black"}>Let's Talk</Link>
+              <Link color={isDark ? "white" : "black"}>Let&apos;s Talk</Link>
             </NextLink>
           </Button>
         </Flex>    

@@ -77,7 +77,7 @@ export default function Home() {
             </Text>
             <Text fontSize="2xl">Long name, huh? Call me</Text>
             <Text fontSize="2xl" fontWeight="bold">
-              'Anandu' 😎
+            &apos;Anandu&apos; 😎
             </Text>
             <Text fontSize="xl">Now, where were we?.. oh..</Text>
             <Text fontSize="3xl">Instructions:</Text>

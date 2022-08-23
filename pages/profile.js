@@ -115,7 +115,7 @@ const Portfolio = () => {
                     });
                   }}
                 >
-                  Let's talk!
+                  Let&apos;s talk!
                 </Button>
               </Box>
               <Image
@@ -142,7 +142,7 @@ const Portfolio = () => {
                 and intuitive user experiences.
               </Text>
               <Text fontSize="xl" color={isDark ? "gray.300" : "gray.600"}>
-                "Be like water, be like you."
+              &quot;Be like water, be like you.&quot;
               </Text>
             </Flex>
           </Stack>
