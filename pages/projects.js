@@ -79,6 +79,15 @@ const Projects = () => {
                 justifyContent="space-around"
                 w={300}
                 h="auto"
+                boxShadow={isDark ? "2px 2px 4px 2px #000000" : "2px 2px 4px 2px #ffffff"}
+                borderRadius={10}
+                cursor="pointer"
+
+                _hover={
+                  {
+                    boxShadow: isDark ? "2px 4px 8px 4px #000000" : "2px 4px 8px 4px #ffffff",
+                  }
+                }
               >
                 <Text fontSize="xl">{project.name}</Text>
                 <Text fontSize="xl">{project.title}</Text>
