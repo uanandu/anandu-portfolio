@@ -77,8 +77,9 @@ const Projects = () => {
                 key={index}
                 alignItems="center"
                 justifyContent="space-around"
-                w={300}
+                w={400}
                 h="auto"
+                p={10}
                 boxShadow={isDark ? "2px 2px 4px 2px white" : "2px 2px 4px 2px black"}
                 borderRadius={10}
                 cursor="pointer"
