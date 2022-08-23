@@ -70,7 +70,7 @@ const Projects = () => {
         >
           Finished Projects
         </Text>
-        <Stack display="grid" gridGap={4} gridTemplateColumns="auto auto auto">
+        <Stack display="grid" gridGap={150} gridTemplateColumns="auto auto auto">
           {projectList.map((project, index) => {
             return (
               <Stack
