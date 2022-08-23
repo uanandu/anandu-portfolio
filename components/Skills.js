@@ -36,8 +36,9 @@ const Skills = ({ isDark }) => {
               <Text fontSize="xl" fontWeight="bold">
                 Frontend
               </Text>
-              <UnorderedList listStyleType="none">
-                <ListItem
+              <Flex>
+                <UnorderedList listStyleType="none">
+<ListItem
                   display="flex"
                   alignItems="center"
                   justifyContent="center"
@@ -131,7 +132,9 @@ const Skills = ({ isDark }) => {
                   {" "}
                   <Text fontSize="lg">SASS</Text>
                 </ListItem>
-                <ListItem
+                </UnorderedList>
+                <UnorderedList listStyleType="none">
+ <ListItem
                   display="flex"
                   alignItems="center"
                   justifyContent="center"
@@ -207,7 +210,8 @@ const Skills = ({ isDark }) => {
                   {" "}
                   <Text fontSize="lg">VueJS</Text>
                 </ListItem>
-              </UnorderedList>
+                </UnorderedList>
+              </Flex>
             </Stack>
             <Stack display="flex" alignItems="center" >
               <Text fontSize="xl" fontWeight="bold">

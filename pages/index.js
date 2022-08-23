@@ -7,6 +7,7 @@ import {
   Stack,
   Box,
   HStack,
+  useMediaQuery,
 } from "@chakra-ui/react";
 
 import { lazy, Suspense } from "react";
@@ -42,6 +43,12 @@ export default function Home() {
     setOpenTimeLine(!openTimeLine);
     setOpenProject(false);
   };
+
+  const [phoneScreen] = useMediaQuery("(max-width: 400px)");
+  const [ipadScreen] = useMediaQuery("(max-width: 768px)");
+  const [isNotSmallerScreen] = useMediaQuery("(min-width: 768px)");
+  const [isNotSmallerScreen2] = useMediaQuery("(min-width: 1024px)");
+
   return (
     <div className={styles.container}>
       <Head>
@@ -60,12 +67,19 @@ export default function Home() {
           justifyContent="space-between"
           alignItems="center"
           w="100%"
-          h="auto"
+          h="80%"
         >
-          <SplineComponent position="relative" w="80%" />
+          <SplineComponent
+            phoneScreen={phoneScreen}
+            ipadScreen={ipadScreen}
+            isNotSmallerScreen={isNotSmallerScreen}
+            isNotSmallerScreen2={isNotSmallerScreen2}
+            position="relative"
+            w="80%"
+          />
           <Stack
             display="flex"
-            direction="column"
+            direction={isNotSmallerScreen ? "column" : "row"}
             justifyContent="space-evenly"
             position="relative"
             w="20%"
@@ -77,7 +91,7 @@ export default function Home() {
             </Text>
             <Text fontSize="2xl">Long name, huh? Call me</Text>
             <Text fontSize="2xl" fontWeight="bold">
-            &apos;Anandu&apos; 😎
+              &apos;Anandu&apos; 😎
             </Text>
             <Text fontSize="xl">Now, where were we?.. oh..</Text>
             <Text fontSize="3xl">Instructions:</Text>

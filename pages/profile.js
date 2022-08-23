@@ -61,17 +61,17 @@ const Portfolio = () => {
           display="flex"
           justifyContent="space-between"
           w="100%"
-          h="100%"
+          h="70%"
           alignItems="center"
         >
           <Stack
             display="flex"
             alignItems="center"
-            justifyContent="space-around"
+            justifyContent="space-between"
             w="40%"
             pl={5}
             pr={5}
-            h="100%"
+            h="auto"
           >
             <Flex
               direction={isNotSmallerScreen ? "row" : "column"}
@@ -129,7 +129,7 @@ const Portfolio = () => {
                 backgroundColor="transparent"
               />
             </Flex>
-            <Flex position="relative" direction="column">
+            <Stack position="relative" display="flex" top="5vh">
               <Text
                 fontSize="xl"
                 fontWeight="bold"
@@ -142,9 +142,10 @@ const Portfolio = () => {
                 and intuitive user experiences.
               </Text>
               <Text fontSize="xl" color={isDark ? "gray.300" : "gray.600"}>
-              &quot;Be like water, be like you.&quot;
+              &quot;Do one thing at a Time, and while doing it put your whole soul into it to the exclusion of all else.&quot;
+              - <strong>Swami Vivekananda</strong>
               </Text>
-            </Flex>
+            </Stack>
           </Stack>
           <Stack
             display="flex"

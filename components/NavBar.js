@@ -10,7 +10,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 
-import { FaSun, FaMoon, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { FaSun, FaMoon, FaLinkedin, FaGithub, FaTwitter, FaHamburger } from "react-icons/fa";
 
 
 import NextLink from "next/link";
@@ -97,7 +97,7 @@ const NavBar = () => {
             </>
           ) : (
             <>
-            
+            <IconButton icon={FaHamburger} onClick={() => {}} />
             </>
             )
         }
