@@ -3,7 +3,7 @@ import { Stack, VStack } from "@chakra-ui/react";
 
 const SplineComponent = () => {
   return (
-    <Stack h="80vh" w="70%"
+    <Stack h="85vh" w="100%"
     marginTop="5vh"
     border="1px solid black"
     >
