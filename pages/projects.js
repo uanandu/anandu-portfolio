@@ -26,7 +26,7 @@ const Projects = () => {
       description:
         "Coding Sanbox environment to help beginners to code and learn",
       video:
-        "https://www.youtube.com/watch?v=kg0rjyfMspU",
+        "https://youtu.be/kg0rjyfMspU",
     },
     {
       name: "Project #2",
