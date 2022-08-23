@@ -79,13 +79,13 @@ const Projects = () => {
                 justifyContent="space-around"
                 w={300}
                 h="auto"
-                boxShadow={isDark ? "2px 2px 4px 2px #000000" : "2px 2px 4px 2px #ffffff"}
+                boxShadow={isDark ? "2px 2px 4px 2px white" : "2px 2px 4px 2px black"}
                 borderRadius={10}
                 cursor="pointer"
 
                 _hover={
                   {
-                    boxShadow: isDark ? "2px 4px 8px 4px #000000" : "2px 4px 8px 4px #ffffff",
+                    boxShadow: isDark ? "2px 4px 8px 4px white" : "2px 4px 8px 4px black",
                   }
                 }
               >
