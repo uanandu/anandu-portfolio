@@ -10,8 +10,14 @@ import {
   Stack,
 } from "@chakra-ui/react";
 
-import { FaSun, FaMoon, FaLinkedin, FaGithub, FaTwitter, FaHamburger } from "react-icons/fa";
-
+import {
+  FaSun,
+  FaMoon,
+  FaLinkedin,
+  FaGithub,
+  FaTwitter,
+  FaHamburger,
+} from "react-icons/fa";
 
 import NextLink from "next/link";
 
@@ -56,52 +62,75 @@ const NavBar = () => {
         justifyContent="flex-end"
         w="100%"
       >
-        {
-          isNotSmallerScreen ? (
-            <>
-          <Flex
-          w="40%"
-          alignItems="center"
-          justifyContent="space-around"
-          position="relative"
-        >
-          <Button>
-            <NextLink href="/">
-              <Link
-                fontSize="lg"
-                fontWeight="bold"
-                color={isDark ? "white" : "black"}
-                cursor="pointer"
-              >
-                Home
-              </Link>
-            </NextLink>
-          </Button>
+        {isNotSmallerScreen ? (
+          <>
+            <Flex
+              w="40%"
+              alignItems="center"
+              justifyContent="space-around"
+              position="relative"
+            >
+              <NextLink href="/" passHref>
+                <Link
+                  fontSize="lg"
+                  fontWeight="bold"
+                  color={isDark ? "white" : "black"}
+                  cursor="pointer"
+                  href="/"
+                >
+                  <Button pr={5} mr={5}>
+                    Home
+                  </Button>
+                </Link>
+              </NextLink>
+              <NextLink href="/profile" passHref>
+                <Link
+                  fontSize="lg"
+                  fontWeight="bold"
+                  color={isDark ? "white" : "black"}
+                  cursor="pointer"
+                >
+                  {" "}
+                  <Button pr={5} mr={5}>
+                    Portfolio
+                  </Button>
+                </Link>
+              </NextLink>
 
-          <Button pr={5} mr={5}>
-            <NextLink href="/profile">
-              <Link color={isDark ? "white" : "black"}>Portfolio</Link>
-            </NextLink>
-          </Button>
-          <Button pr={5} mr={5}>
-            <NextLink href="/projects">
-              <Link color={isDark ? "white" : "black"}>Projects</Link>
-            </NextLink>
-          </Button>
-          <Button>
-            <NextLink href="/talk">
-              <Link color={isDark ? "white" : "black"}>Let&apos;s Talk</Link>
-            </NextLink>
-          </Button>
-        </Flex>    
-            </>
-          ) : (
-            <>
+              <NextLink href="/projects" passHref>
+                <Link
+                  fontSize="lg"
+                  fontWeight="bold"
+                  color={isDark ? "white" : "black"}
+                  cursor="pointer"
+                >
+                  {" "}
+                  <Button pr={5} mr={5}>
+                    Projects
+                  </Button>
+                </Link>
+              </NextLink>
+              <NextLink href="/talk" passHref>
+                <Link
+                  fontSize="lg"
+                  fontWeight="bold"
+                  color={isDark ? "white" : "black"}
+                  cursor="pointer"
+                >
+                  {" "}
+                  <Button pr={5} mr={5}>
+                    Let&apos;s Talk
+                  </Button>
+                </Link>
+              </NextLink>
+            </Flex>
+          </>
+        ) : (
+          <>
             <IconButton icon={FaHamburger} onClick={() => {}} />
-            </>
-            )
-        }
-        
+          </>
+        )}
+
         <IconButton
           ml="4"
           mr="2"

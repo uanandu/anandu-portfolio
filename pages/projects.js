@@ -81,7 +81,7 @@ const Projects = () => {
                 h="auto"
                 p={10}
                 boxShadow={isDark ? "2px 2px 4px 2px white" : "2px 2px 4px 2px black"}
-                borderRadius={10}
+                borderRadius={2}
                 cursor="pointer"
                 transition="all 0.3s ease-in-out"
                 _hover={
