@@ -1,5 +1,6 @@
-import { Stack, VStack, HStack, Flex, IconButton, Text, useColorMode } from "@chakra-ui/react";
+import { Stack, VStack, HStack, Flex, IconButton, Text, Link,useColorMode } from "@chakra-ui/react";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import {FiMail} from "react-icons/fi";
 import NavBar from "../components/NavBar";
 
 import styles from "../styles/Home.module.css";
@@ -15,7 +16,33 @@ const Talk = () => {
         h="95vh"
       >
         <NavBar />
-        <Text>Talk</Text>
+        <Stack
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
+          w="100%"
+        >
+        <Text fontSize="9xl">Hello.</Text>
+        <Text fontSize="5xl">Questions?</Text>
+        <Text fontSize="3xl">Drop an Email here:</Text>
+          <Link href="mailto:ananduun@icloud.com">
+        <IconButton   variant='outline'
+  colorScheme='red'
+ size="lg" icon={<FiMail />}/>
+          </Link>
+
+        <Text fontSize="3xl">Or</Text>
+        <Text fontSize="3xl">Connect with me on:</Text>
+        <Link href="https://www.linkedin.com/in/ananduun/">
+          <IconButton
+            variant='outline'
+            colorScheme='red'
+            size="lg" icon={<FaLinkedin />}
+          />
+        </Link>
+
+        </Stack>
+
       </VStack>
       <footer className={styles.footer}>
         <HStack

@@ -8,7 +8,10 @@ import {
   Button,
   HStack,
   Stack,
+  Switch
 } from "@chakra-ui/react";
+
+import { useState } from "react";
 
 import {
   FaSun,
@@ -25,9 +28,16 @@ const NavBar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
 
-  const isNotSmallerScreen = useMediaQuery("(min-width: 768px)");
+  const [displayMenu, setDisplayMenu] = useState(false);
+
+
+  const handleOpen = (e) => {
+    e.preventDefault();
+    setDisplayMenu(!displayMenu);
+  }
 
   return (
+    <>
     <HStack
       display="flex"
       alignItems="center"
@@ -62,9 +72,10 @@ const NavBar = () => {
         justifyContent="flex-end"
         w="100%"
       >
-        {isNotSmallerScreen ? (
-          <>
             <Flex
+              display={
+                ["none", "none", "flex", "flex"]
+              }
               w="40%"
               alignItems="center"
               justifyContent="space-around"
@@ -124,13 +135,11 @@ const NavBar = () => {
                 </Link>
               </NextLink>
             </Flex>
-          </>
-        ) : (
-          <>
-            <IconButton icon={FaHamburger} onClick={() => {}} />
-          </>
-        )}
-
+            <IconButton display={[
+              "flex", "flex", "none", "none"
+            ]} icon={<FaHamburger/>}
+            onClick={handleOpen}
+            />
         <IconButton
           ml="4"
           mr="2"
@@ -139,8 +148,77 @@ const NavBar = () => {
           isRound="true"
           border={isDark ? "1px solid white" : "1px solid black"}
         />
+        
       </Stack>
+      
     </HStack>
+    {
+      displayMenu && (
+        <Stack
+    alignItems="center"
+    w="100vw"
+  >
+    <NextLink href="/" passHref>
+          <Link
+            fontSize="lg"
+            fontWeight="bold"
+            color={isDark ? "white" : "black"}
+            cursor="pointer"
+            href="/"
+            w="100vw"
+            border="1px solid lightgray"
+            alignItems="center"
+          >
+            <Button pr={5} mr={5}>
+              Home
+            </Button>
+          </Link>
+        </NextLink>
+        <NextLink href="/profile" passHref>
+          <Link
+            fontSize="lg"
+            fontWeight="bold"
+            color={isDark ? "white" : "black"}
+            cursor="pointer"
+          >
+            {" "}
+            <Button pr={5} mr={5}>
+              Portfolio
+            </Button>
+          </Link>
+        </NextLink>
+
+        <NextLink href="/projects" passHref>
+          <Link
+            fontSize="lg"
+            fontWeight="bold"
+            color={isDark ? "white" : "black"}
+            cursor="pointer"
+          >
+            {" "}
+            <Button pr={5} mr={5}>
+              Projects
+            </Button>
+          </Link>
+        </NextLink>
+        <NextLink href="/talk" passHref>
+          <Link
+            fontSize="lg"
+            fontWeight="bold"
+            color={isDark ? "white" : "black"}
+            cursor="pointer"
+          >
+            {" "}
+            <Button pr={5} mr={5}>
+              Let&apos;s Talk
+            </Button>
+          </Link>
+        </NextLink>
+  </Stack>
+      )
+    }
+    
+  </>
   );
 };
 
