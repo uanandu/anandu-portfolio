@@ -6,50 +6,48 @@ import {
   IconButton,
   Text,
   useColorMode,
+  Button,
   Box,
-  Image,
-  Link,
 } from "@chakra-ui/react";
 import Head from "next/head";
+import { useState } from "react";
 
 import styles from "../styles/Home.module.css";
 import NavBar from "../components/NavBar";
-import { FaSun, FaMoon, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import {FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import SchoolProjects from "../components/SchoolProjects";
+import CurrentProjects from "../components/CurrentProjects";
+import UpcomingProjects from "../components/UpcomingProjects";
 
 const Projects = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const isDark = colorMode === "dark";
 
-  const projectList = [
-    {
-      name: "Project #1",
-      title: "Coding Cat",
-      description:
-        "Coding Sanbox environment to help beginners to code and learn",
-      image: "https://cdn.discordapp.com/attachments/978673047772991548/1008758286109130803/readme-site.gif",
-      github: "https://github.com/uanandu/Coding_Cat",
-      youtube: "",
-    },
-    {
-      name: "Project #2",
-      title: "E-Commerce",
-      description: "E-Commerce website to sell wearables",
-      image:
-        "https://cdn.discordapp.com/attachments/978673047772991548/1011642261299273800/group-project.gif",
-      github: "https://github.com/uanandu/project-GROUP-e-commerce",
-      youtube: "",
-    },
-    {
-      name: "Project #3",
-      title: "IssueBot",
-      description:
-        "Web app to keep track of user's issues and remind them to fix them based on priority",
-      image:
-        "https://cdn.discordapp.com/attachments/978673047772991548/1011333620243370155/issue_bot.png",
-      github: "https://github.com/uanandu/Issue-Tracker",
-      youtube: "",
-    },
-  ];
+  // states for toggle button
+  const [schoolProjecst, setSchoolProjecst] = useState(false);
+  const [currentProjects, setCurrentProjects] = useState(false);
+  const [upcomingProjects, setUpcomingProjects] = useState(false);
+
+  const handleOpenSchoolProjects = (e) => {
+    e.preventDefault();
+    setSchoolProjecst(!schoolProjecst);
+    setCurrentProjects(false);
+    setUpcomingProjects(false);
+  };
+
+  const handleOpenCurrentProjects = (e) => {
+    e.preventDefault();
+    setCurrentProjects(!currentProjects);
+    setSchoolProjecst(false);
+    setUpcomingProjects(false);
+  };
+
+  const handleOpenUpcomingProjects = (e) => {
+    e.preventDefault();
+    setUpcomingProjects(!upcomingProjects);
+    setCurrentProjects(false);
+    setSchoolProjecst(false);
+  };
 
   return (
     <>
@@ -62,56 +60,104 @@ const Projects = () => {
         />
       </Head>
       <VStack w="100%" h="95vh" top="20vh">
-      <NavBar />
-      <Stack
-        position="relative"
-        top="10vh"
-      >
-      <Text
-          fontSize="4xl"
-          fontWeight="bold"
-          color={isDark ? "white" : "black"}
+        <NavBar />
+        <Stack
+          display="flex"
+          alignItems="center"
+          justifyContent="space-around"
+          w="60%"
+          pl={5}
+          pr={5}
+          position="relative"
         >
-          Finished Projects
-        </Text>
-        <Stack display="grid" gridGap={150} gridTemplateColumns="auto auto auto">
-          {projectList.map((project, index) => {
-            return (
-              <Stack
-                key={index}
-                alignItems="center"
-                justifyContent="space-around"
-                w={300}
-                h="auto"
-                p={10}
-                boxShadow={isDark ? "2px 2px 4px 2px white" : "2px 2px 4px 2px black"}
-                borderRadius={2}
+          <Flex
+              alignItems="center"
+              justifyContent="center"
+              w="100%"
+              h="100%"
+              mt={10}
+              mb={20}
+              position="relative"
+              top="5vh"
+            >
+              <Button
+                onClick={(e) => {
+                  handleOpenSchoolProjects(e);
+                }}
+                border={isDark ? "1px solid white" : "1px solid black"}
+                mr={20}
                 cursor="pointer"
-                transition="all 0.3s ease-in-out"
-                _hover={
-                  {
-                    boxShadow: isDark ? "2px 4px 8px 4px white" : "2px 4px 8px 4px black",
-                  }
-                }
               >
-                <Text fontSize="xl">{project.name}</Text>
-                <Text fontSize="xl">{project.title}</Text>
-                <Image src={project.image} w="100%" h="auto" />
-                <Link href={project.github}>
-                  <IconButton
-                    ml="3"
-                    icon={<FaGithub />}
-                    // isRound="true"
-                    border={isDark ? "1px solid white" : "1px solid black"}
-                  />
-                </Link>
-                <Text fontSize="lg">{project.description}</Text>
-              </Stack>
-            );
-          })}
+                Projects
+              </Button>
+              <Button
+                onClick={(e) => {
+                  handleOpenCurrentProjects(e);
+                }}
+                border={isDark ? "1px solid white" : "1px solid black"}
+                mr={20}
+                cursor="pointer"
+              >
+                Current Projects
+              </Button>
+              <Button
+                onClick={(e) => {
+                  handleOpenUpcomingProjects(e);
+                }}
+                border={isDark ? "1px solid white" : "1px solid black"}
+                cursor="pointer"
+              >
+                Upcoming Projects
+              </Button>
+            </Flex>
+            <Flex>
+              <Box position="relative" w="100%" h="100%">
+                <Stack
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="space-around"
+                  position="relative"
+                  border={isDark ? "1px solid white" : "1px solid black"}
+                  borderRadius="lg"
+                  w="50vw"
+                  h="70vh"
+                  mt={5}
+                >
+                  {schoolProjecst && (
+                    <>
+                      <SchoolProjects isDark={isDark} />
+                    </>
+                  )}
+                  {currentProjects && (
+                    <>
+                      <CurrentProjects isDark={isDark} />
+                    </>
+                  )}
+                  {
+                    upcomingProjects && (
+                      <>
+                      <UpcomingProjects isDark={isDark} />
+                      </>
+                    )
+                  }
+                  {!schoolProjecst && !currentProjects && !upcomingProjects && (
+                    <Stack>
+                      <Text fontSize="xl" fontWeight="bold">
+                        Hey there!🤠
+                      </Text>
+                      <Text
+                        fontSize="xl"
+                        fontWeight="bold"
+                        color={isDark ? "gray.300" : "gray.600"}
+                      >
+                        Please select a section to see more.
+                      </Text>
+                    </Stack>
+                  )}
+                </Stack>
+              </Box>
+            </Flex>
         </Stack>
-      </Stack>
-
       </VStack>
       <footer className={styles.footer}>
         <HStack mt={2}>
