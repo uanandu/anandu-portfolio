@@ -59,7 +59,6 @@ const Talk = () => {
             width="100%"
             height="100%"
             style={{ border: 0 }}
-            aria-hidden="false"
           ></iframe>
         </Flex>
       </VStack>
