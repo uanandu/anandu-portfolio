@@ -12,7 +12,7 @@ const CurrentProjects = ({ isDark }) => {
   return (
     <>
       <VStack position="relative" display="flex" w="100%" h="100%" top="5vh">
-        <Stack display="flex" alignItems="center" justifyContent="space-around">
+        <Stack display="flex" justifyContent="space-around">
           <Text fontSize="xl" fontWeight="bold">
             Construction Code 2.0
           </Text>
