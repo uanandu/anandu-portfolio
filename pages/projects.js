@@ -63,7 +63,11 @@ const Projects = () => {
       </Head>
       <VStack w="100%" h="95vh" top="20vh">
       <NavBar />
-        <Text
+      <Stack
+        position="relative"
+        top="10vh"
+      >
+      <Text
           fontSize="4xl"
           fontWeight="bold"
           color={isDark ? "white" : "black"}
@@ -106,6 +110,8 @@ const Projects = () => {
             );
           })}
         </Stack>
+      </Stack>
+
       </VStack>
       <footer className={styles.footer}>
         <HStack mt={2}>
