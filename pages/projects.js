@@ -61,8 +61,8 @@ const Projects = () => {
           href="https://cdn.discordapp.com/attachments/978673047772991548/1010895573303427222/favicon.ico"
         />
       </Head>
-      <VStack w="100%" h="95vh">
-        <NavBar />
+      <VStack w="100%" h="95vh" top="10vh">
+      <NavBar />
         <Text
           fontSize="4xl"
           fontWeight="bold"
@@ -77,7 +77,7 @@ const Projects = () => {
                 key={index}
                 alignItems="center"
                 justifyContent="space-around"
-                w={400}
+                w={300}
                 h="auto"
                 p={10}
                 boxShadow={isDark ? "2px 2px 4px 2px white" : "2px 2px 4px 2px black"}
