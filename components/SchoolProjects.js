@@ -50,7 +50,7 @@ const SchoolProjects = ({isDark}) => {
         </Text>
         <Stack
           display="grid"
-          gridGap={150}
+          gridGap={20}
           gridTemplateColumns="auto auto auto"
         >
           {projectList.map((project, index) => {
@@ -59,7 +59,7 @@ const SchoolProjects = ({isDark}) => {
                 key={index}
                 alignItems="center"
                 justifyContent="space-around"
-                w={300}
+                w={200}
                 h="auto"
                 p={10}
                 boxShadow={
