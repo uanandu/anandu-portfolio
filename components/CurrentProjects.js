@@ -10,7 +10,9 @@ const CurrentProjects = ({isDark}) => {
                     alignItems="center"
                     justifyContent="space-around"
                     position="relative"
-                    boxShadow={isDark ? "0px 0px 10px 10px rgba(0, 0, 0, 0.5)" : "0px 0px 10px 10px rgba(255, 255, 255, 0.5)"}
+                    boxShadow={
+                        isDark ? "2px 2px 4px 2px white" : "2px 2px 4px 2px black"
+                      }
                     borderRadius="lg"
                     w="20vw"
                     h="auto"
@@ -18,8 +20,9 @@ const CurrentProjects = ({isDark}) => {
                     transition= "all 0.2s ease-in-out"
 
                     _hover={{
-                        boxShadow: isDark ? "0px 0px 10px 10px rgba(0, 0, 0, 0.5)" : "0px 0px 10px 10px rgba(255, 255, 255, 0.5)",
-                        transform: "translateY(-5px)",
+                        boxShadow: isDark
+                    ? "2px 4px 8px 4px white"
+                    : "2px 4px 8px 4px black",
                     }}
                 >
                     <Text fontSize="xl" fontWeight="bold">Construction Code 2.0</Text>
