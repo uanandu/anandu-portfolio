@@ -68,6 +68,7 @@ export default function Home() {
           alignItems="center"
           w="100%"
           h="90%"
+          top="10vh"
         >
           <SplineComponent
             phoneScreen={phoneScreen}
