@@ -24,6 +24,7 @@ const CurrentProjects = ({ isDark }) => {
               style={{
                 padding: "5px",
                 backgroundColor: "green",
+                color: "white",
                 border: "1px solid lightgray",
               }}
             >
