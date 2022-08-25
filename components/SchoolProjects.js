@@ -1,46 +1,44 @@
 import { VStack, Stack, Text, Image, Link, IconButton } from "@chakra-ui/react";
 
-import {FaGithub } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
-
-const SchoolProjects = ({isDark}) => {
-
-    const projectList = [
-        {
-          name: "Project #1",
-          title: "Coding Cat",
-          description:
-            "Coding Sandbox environment to help beginners to code and learn",
-          image:
-            "https://cdn.discordapp.com/attachments/978673047772991548/1008758286109130803/readme-site.gif",
-          github: "https://github.com/uanandu/Coding_Cat",
-          youtube: "",
-        },
-        {
-          name: "Project #2",
-          title: "E-Commerce",
-          description: "E-Commerce website to sell wearables",
-          image:
-            "https://cdn.discordapp.com/attachments/978673047772991548/1011642261299273800/group-project.gif",
-          github: "https://github.com/uanandu/project-GROUP-e-commerce",
-          youtube: "",
-        },
-        {
-          name: "Project #3",
-          title: "IssueBot",
-          description:
-            "Web app to keep track of user's issues and remind them to fix them based on priority",
-          image:
-            "https://cdn.discordapp.com/attachments/978673047772991548/1011333620243370155/issue_bot.png",
-          github: "https://github.com/uanandu/Issue-Tracker",
-          youtube: "",
-        },
-      ];
+const SchoolProjects = ({ isDark }) => {
+  const projectList = [
+    {
+      name: "Project #1",
+      title: "Coding Cat",
+      description:
+        "Coding Sandbox environment to help beginners to code and learn",
+      image:
+        "https://cdn.discordapp.com/attachments/978673047772991548/1008758286109130803/readme-site.gif",
+      github: "https://github.com/uanandu/Coding_Cat",
+      youtube: "",
+    },
+    {
+      name: "Project #2",
+      title: "E-Commerce",
+      description: "E-Commerce website to sell wearables",
+      image:
+        "https://cdn.discordapp.com/attachments/978673047772991548/1011642261299273800/group-project.gif",
+      github: "https://github.com/uanandu/project-GROUP-e-commerce",
+      youtube: "",
+    },
+    {
+      name: "Project #3",
+      title: "IssueBot",
+      description:
+        "Web app to keep track of user's issues and remind them to fix them based on priority",
+      image:
+        "https://cdn.discordapp.com/attachments/978673047772991548/1011333620243370155/issue_bot.png",
+      github: "https://github.com/uanandu/Issue-Tracker",
+      youtube: "",
+    },
+  ];
 
   return (
     <>
       <VStack>
-        <h1>School Projects</h1>
+        {" "}
         <Text
           fontSize="4xl"
           fontWeight="bold"
@@ -48,11 +46,7 @@ const SchoolProjects = ({isDark}) => {
         >
           Finished Projects
         </Text>
-        <Stack
-          display="grid"
-          gridGap={20}
-          gridTemplateColumns="auto auto auto"
-        >
+        <Stack display="grid" gridGap={20} gridTemplateColumns="auto auto auto">
           {projectList.map((project, index) => {
             return (
               <Stack
@@ -74,7 +68,9 @@ const SchoolProjects = ({isDark}) => {
                     : "2px 4px 8px 4px black",
                 }}
               >
-                <Text fontSize="xl" fontWeight="800">{project.name}</Text>
+                <Text fontSize="xl" fontWeight="800">
+                  {project.name}
+                </Text>
                 <Text fontSize="lg">{project.title}</Text>
                 <Image src={project.image} w="100%" h="auto" />
                 <Link href={project.github}>
