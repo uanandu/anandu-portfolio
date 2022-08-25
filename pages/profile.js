@@ -61,7 +61,7 @@ const Portfolio = () => {
           display="flex"
           justifyContent="space-between"
           w="100%"
-          h="85%"
+          h="80%"
           alignItems="center"
         >
           <Stack
