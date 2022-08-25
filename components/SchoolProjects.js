@@ -75,7 +75,7 @@ const SchoolProjects = ({isDark}) => {
                 }}
               >
                 <Text fontSize="xl">{project.name}</Text>
-                <Text fontSize="xl">{project.title}</Text>
+                <Text fontSize="lg">{project.title}</Text>
                 <Image src={project.image} w="100%" h="auto" />
                 <Link href={project.github}>
                   <IconButton
@@ -85,7 +85,7 @@ const SchoolProjects = ({isDark}) => {
                     border={isDark ? "1px solid white" : "1px solid black"}
                   />
                 </Link>
-                <Text fontSize="lg">{project.description}</Text>
+                <Text fontSize="md">{project.description}</Text>
               </Stack>
             );
           })}
