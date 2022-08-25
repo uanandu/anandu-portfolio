@@ -1,6 +1,6 @@
 import { Image, ListItem, Stack, Text, UnorderedList, VStack } from "@chakra-ui/react"
 
-const CurrentProjects = () => {
+const CurrentProjects = ({isDark}) => {
     return (
         <>
             <VStack>
