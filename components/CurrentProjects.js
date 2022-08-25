@@ -1,4 +1,5 @@
 import {
+  Flex,
   Image,
   ListItem,
   Stack,
@@ -19,7 +20,7 @@ const CurrentProjects = ({ isDark }) => {
           position="relative"
           boxShadow={isDark ? "2px 2px 4px 2px white" : "2px 2px 4px 2px black"}
           borderRadius="lg"
-          w="20vw"
+          w="70%"
           h="auto"
           p={20}
           transition="all 0.2s ease-in-out"
@@ -34,8 +35,12 @@ const CurrentProjects = ({ isDark }) => {
           </Text>
           <Text fontSize="xl">Client: Michael Belanger, Contractor</Text>
           <Text fontSize="xl">Field: Construction</Text>
-          <Text fontSize="lg">Status: In Progress</Text>
-          <Image src="https://cdn.discordapp.com/attachments/979724631172849685/1012400782907277322/Screen_Shot_2022-08-25_at_12.39.12_PM.png" />
+
+          <Flex>
+            <Text fontSize="lg">Status: <strong style={{padding: "5px", backgroundColor: "green", border: "1px solid lightgray"}}>In Progress</strong></Text>
+            <Image src="https://cdn.discordapp.com/attachments/979724631172849685/1012400782907277322/Screen_Shot_2022-08-25_at_12.39.12_PM.png" />
+          </Flex>
+
           <Text fontSize="lg">Description: Construction company website</Text>
           <UnorderedList>
             <Text fontSize="lg">It features the following:</Text>
