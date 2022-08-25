@@ -67,7 +67,7 @@ export default function Home() {
           justifyContent="space-between"
           alignItems="center"
           w="100%"
-          h="80%"
+          h="90%"
         >
           <SplineComponent
             phoneScreen={phoneScreen}
