@@ -59,8 +59,8 @@ export default function Home() {
           href="https://cdn.discordapp.com/attachments/978673047772991548/1010895573303427222/favicon.ico"
         />
       </Head>
-      <NavBar />
       <VStack w="100%" h="95vh" top="10vh">
+      <NavBar />
         <Stack
           display="flex"
           direction="row"
