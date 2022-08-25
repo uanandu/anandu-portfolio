@@ -10,7 +10,7 @@ const SchoolProjects = ({isDark}) => {
           name: "Project #1",
           title: "Coding Cat",
           description:
-            "Coding Sanbox environment to help beginners to code and learn",
+            "Coding Sandbox environment to help beginners to code and learn",
           image:
             "https://cdn.discordapp.com/attachments/978673047772991548/1008758286109130803/readme-site.gif",
           github: "https://github.com/uanandu/Coding_Cat",
@@ -59,9 +59,9 @@ const SchoolProjects = ({isDark}) => {
                 key={index}
                 alignItems="center"
                 justifyContent="space-around"
-                w={200}
+                w={250}
                 h="auto"
-                p={10}
+                p={5}
                 boxShadow={
                   isDark ? "2px 2px 4px 2px white" : "2px 2px 4px 2px black"
                 }
@@ -74,7 +74,7 @@ const SchoolProjects = ({isDark}) => {
                     : "2px 4px 8px 4px black",
                 }}
               >
-                <Text fontSize="xl">{project.name}</Text>
+                <Text fontSize="xl" fontWeight="800">{project.name}</Text>
                 <Text fontSize="lg">{project.title}</Text>
                 <Image src={project.image} w="100%" h="auto" />
                 <Link href={project.github}>
