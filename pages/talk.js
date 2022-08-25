@@ -14,6 +14,7 @@ const Talk = () => {
       <VStack
         w="100%"
         h="95vh"
+        top="10vh"
       >
         <NavBar />
         <Stack
