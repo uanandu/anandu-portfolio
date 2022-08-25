@@ -18,7 +18,8 @@ const Talk = () => {
         top="10vh"
       >
         <NavBar />
-        <Stack
+        <Flex>
+          <Stack
         position="relative"
           display="flex"
           alignItems="center"
@@ -46,6 +47,9 @@ const Talk = () => {
         </Link>
 
         </Stack>
+        <iframe src="https://cdn.discordapp.com/attachments/979724631172849685/1012143130105102386/Anandu_Resume.pdf" width="100%" height="100%" frameborder="0" style={{border:0}} allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </Flex>
+        
 
       </VStack>
       <footer className={styles.footer}>
