@@ -194,7 +194,7 @@ const Portfolio = () => {
                   border={isDark ? "1px solid white" : "1px solid black"}
                   borderRadius="lg"
                   w="50vw"
-                  h="75vh"
+                  h="70vh"
                   mt={5}
                 >
                   {openSkills && (

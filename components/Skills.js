@@ -166,7 +166,7 @@ const Skills = ({ isDark }) => {
                   transition="all 0.3s ease-in-out"
                   _hover={{
                     boxShadow: isDark ? "0px 0px 10px rgba(255, 255, 255, 0.5)" : "0px 0px 10px rgba(0, 0, 0, 0.5)",
-                    transform: "scale(1.1)",
+                    transform: "scale(1.05)",
                   }}
                 >
                   {" "}
@@ -185,7 +185,7 @@ const Skills = ({ isDark }) => {
                   transition="all 0.3s ease-in-out"
                   _hover={{
                     boxShadow: isDark ? "0px 0px 10px rgba(255, 255, 255, 0.5)" : "0px 0px 10px rgba(0, 0, 0, 0.5)",
-                    transform: "scale(1.1)",
+                    transform: "scale(1.05)",
                   }}
                 >
                   {" "}
@@ -204,7 +204,7 @@ const Skills = ({ isDark }) => {
                   transition="all 0.3s ease-in-out"
                   _hover={{
                     boxShadow: isDark ? "0px 0px 10px rgba(255, 255, 255, 0.5)" : "0px 0px 10px rgba(0, 0, 0, 0.5)",
-                    transform: "scale(1.1)",
+                    transform: "scale(1.05)",
                   }}
                 >
                   {" "}
