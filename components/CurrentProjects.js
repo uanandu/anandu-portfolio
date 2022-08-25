@@ -14,7 +14,6 @@ const CurrentProjects = ({ isDark }) => {
       <VStack
         position="relative"
         display="flex"
-        alignItems="center"
         w="100%"
         h="100%"
       >
