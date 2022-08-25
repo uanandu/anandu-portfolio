@@ -47,6 +47,8 @@ const NavBar = () => {
       mb={10}
       pb={2}
       pt={2}
+      pl={3}
+      pr={3}
       borderBottom={isDark ? "1px solid white" : "1px solid lightgray"}
       zIndex={5}
     >
