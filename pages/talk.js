@@ -18,6 +18,7 @@ const Talk = () => {
       >
         <NavBar />
         <Stack
+        position="relative"
           display="flex"
           alignItems="center"
           justifyContent="space-between"
