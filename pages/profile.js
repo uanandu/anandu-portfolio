@@ -81,7 +81,7 @@ const Portfolio = () => {
               h="38vh"
               mb="10vh"
             >
-              <Box mt={isNotSmallerScreen ? "0" : "20"} alignSelf="flex-start">
+              <Box alignSelf="flex-start">
                 <Text
                   fontSize="4xl"
                   fontWeight="bold"
@@ -105,7 +105,7 @@ const Portfolio = () => {
                 >
                   WebDev, UI/UX Designer, and Full Stack Developer.
                 </Text>
-                <Button
+                {/* <Button
                   mt={10}
                   colorScheme="blue"
                   onClick={() => {
@@ -116,7 +116,7 @@ const Portfolio = () => {
                   }}
                 >
                   Let&apos;s talk!
-                </Button>
+                </Button> */}
               </Box>
               <Image
                 src="https://cdn.discordapp.com/attachments/978673047772991548/1009131393839808572/portfolio_image-removebg-preview.png"
