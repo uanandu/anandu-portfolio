@@ -11,7 +11,12 @@ import {
 const CurrentProjects = ({ isDark }) => {
   return (
     <>
-      <VStack>
+      <VStack
+        position="relative"
+        display="flex"
+        alignItems="center"
+        justifyContent="center"
+      >
         <Text fontSize="3xl" fontWeight="bold">
           Current Projects
         </Text>
