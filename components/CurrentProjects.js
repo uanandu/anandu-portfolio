@@ -16,7 +16,6 @@ const CurrentProjects = ({ isDark }) => {
         </Text>
         <Stack
           display="flex"
-          justifyContent="space-around"
           position="relative"
           boxShadow={isDark ? "2px 2px 4px 2px white" : "2px 2px 4px 2px black"}
           borderRadius="lg"
