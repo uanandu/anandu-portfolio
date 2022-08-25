@@ -22,6 +22,7 @@ const Talk = () => {
           alignItems="center"
           justifyContent="space-between"
           w="100%"
+          top="10vh"
         >
         <Text fontSize="9xl">Hello.</Text>
         <Text fontSize="5xl">Questions?</Text>
