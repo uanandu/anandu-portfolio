@@ -16,6 +16,8 @@ const CurrentProjects = ({ isDark }) => {
         display="flex"
         alignItems="center"
         justifyContent="center"
+        w="100%"
+        h="100%"
       >
         <Text fontSize="3xl" fontWeight="bold">
           Current Projects
