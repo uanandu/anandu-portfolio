@@ -61,7 +61,7 @@ const Portfolio = () => {
           display="flex"
           justifyContent="space-between"
           w="100%"
-          h="90%"
+          h="80%"
           alignItems="center"
         >
           <Stack
@@ -71,7 +71,7 @@ const Portfolio = () => {
             w="40%"
             pl={5}
             pr={5}
-            h="auto"
+            h="100%"
           >
             <Flex
               direction={isNotSmallerScreen ? "row" : "column"}
