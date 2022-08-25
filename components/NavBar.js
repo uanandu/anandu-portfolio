@@ -39,6 +39,7 @@ const NavBar = () => {
   return (
     <>
     <HStack
+      position="fixed"
       display="flex"
       alignItems="center"
       justifyContent="space-between"
@@ -47,7 +48,6 @@ const NavBar = () => {
       pb={2}
       pt={2}
       borderBottom={isDark ? "1px solid white" : "1px solid lightgray"}
-      position="relative"
       zIndex={5}
     >
       <Flex>
