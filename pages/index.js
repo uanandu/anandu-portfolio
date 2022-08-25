@@ -75,7 +75,7 @@ export default function Home() {
             isNotSmallerScreen={isNotSmallerScreen}
             isNotSmallerScreen2={isNotSmallerScreen2}
             position="relative"
-            w="80%"
+            w="90%"
           />
           <Stack
             display="flex"
