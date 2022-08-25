@@ -18,17 +18,7 @@ const CurrentProjects = ({ isDark }) => {
         <Stack
           display="flex"
           position="relative"
-          boxShadow={isDark ? "2px 2px 4px 2px white" : "2px 2px 4px 2px black"}
-          borderRadius="lg"
-          w="70%"
-          h="60%"
           p={20}
-          transition="all 0.2s ease-in-out"
-          _hover={{
-            boxShadow: isDark
-              ? "2px 4px 8px 4px white"
-              : "2px 4px 8px 4px black",
-          }}
         >
           <Text fontSize="xl" fontWeight="bold">
             Construction Code 2.0
