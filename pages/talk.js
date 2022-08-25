@@ -54,12 +54,12 @@ const Talk = () => {
               />
             </Link>
           </Stack>
-          <embed
+          {/* <embed
             src="https://cdn.discordapp.com/attachments/979724631172849685/1012143130105102386/Anandu_Resume.pdf"
             width="100%"
             height="100%"
             style={{ border: 0 }}
-          />
+          /> */}
         </Flex>
       </VStack>
       <footer className={styles.footer}>
