@@ -19,14 +19,6 @@ const CurrentProjects = ({ isDark }) => {
         w="100%"
         h="100%"
       >
-        <Text fontSize="3xl" fontWeight="bold">
-          Current Projects
-        </Text>
-        <Stack
-          display="flex"
-          position="relative"
-          p={20}
-        >
           <Text fontSize="xl" fontWeight="bold">
             Construction Code 2.0
           </Text>
@@ -42,7 +34,6 @@ const CurrentProjects = ({ isDark }) => {
             <ListItem>Company contact page</ListItem>
             <ListItem>Previous works</ListItem>
           </UnorderedList>
-        </Stack>
       </VStack>
     </>
   );
