@@ -67,7 +67,7 @@ export default function Home() {
           justifyContent="space-between"
           alignItems="center"
           w="100%"
-          h="95%"
+          h="100%"
           top="10vh"
         >
           <SplineComponent
