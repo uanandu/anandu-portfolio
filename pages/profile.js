@@ -67,7 +67,7 @@ const Portfolio = () => {
           <Stack
             display="flex"
             alignItems="center"
-            justifyContent="space-between"
+            justifyContent="space-around"
             w="40%"
             pl={5}
             pr={5}
@@ -129,7 +129,7 @@ const Portfolio = () => {
                 backgroundColor="transparent"
               />
             </Flex>
-            <Stack position="relative" display="flex" top="5vh">
+            <Stack position="relative" display="flex" mt="5vh">
               <Text
                 fontSize="xl"
                 fontWeight="bold"
