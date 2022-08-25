@@ -5,7 +5,23 @@ const CurrentProjects = () => {
         <>
             <VStack>
                 <Text fontSize="3xl" fontWeight="bold">Current Projects</Text>
-                <Stack>
+                <Stack
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="space-around"
+                    position="relative"
+                    boxShadow={isDark ? "0px 0px 10px 10px rgba(0, 0, 0, 0.5)" : "0px 0px 10px 10px rgba(255, 255, 255, 0.5)"}
+                    borderRadius="lg"
+                    w="20vw"
+                    h="auto"
+                    p={20}
+                    transition= "all 0.2s ease-in-out"
+
+                    _hover={{
+                        boxShadow: isDark ? "0px 0px 10px 10px rgba(0, 0, 0, 0.5)" : "0px 0px 10px 10px rgba(255, 255, 255, 0.5)",
+                        transform: "translateY(-5px)",
+                    }}
+                >
                     <Text fontSize="xl" fontWeight="bold">Construction Code 2.0</Text>
                     <Text fontSize="xl" fontWeight="bold">Client: Michael Belanger, Contractor</Text>
                     <Text fontSize="xl" fontWeight="bold">Field: Construction</Text>
