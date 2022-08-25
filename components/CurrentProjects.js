@@ -7,7 +7,6 @@ const CurrentProjects = ({isDark}) => {
                 <Text fontSize="3xl" fontWeight="bold">Current Projects</Text>
                 <Stack
                     display="flex"
-                    alignItems="center"
                     justifyContent="space-around"
                     position="relative"
                     boxShadow={
