@@ -11,7 +11,7 @@ import {
 const CurrentProjects = ({ isDark }) => {
   return (
     <>
-      <VStack position="relative" display="flex" w="100%" h="100%" top="5vh" alignItems="center">
+      <VStack position="relative" display="flex" w="100%" h="100%" top="2vh" alignItems="center">
         <Stack display="flex"justifyContent="space-around" w="80%">
           <Text fontSize="xl" fontWeight="bold">
             Construction Code 2.0
