@@ -78,7 +78,7 @@ const Projects = () => {
               mt={10}
               mb={20}
               position="relative"
-              top="5vh"
+              top="3vh"
             >
               <Button
                 onClick={(e) => {
@@ -110,7 +110,10 @@ const Projects = () => {
                 Upcoming Projects
               </Button>
             </Flex>
-            <Flex>
+            <Flex
+              position="relative"
+              top="-3vh"
+            >
               <Box position="relative" w="100%" h="100%">
                 <Stack
                   display="flex"
