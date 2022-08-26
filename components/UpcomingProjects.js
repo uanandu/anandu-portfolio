@@ -19,7 +19,7 @@ const UpcomingProjects = ({isDark}) => {
                             padding: "5px",
                             backgroundColor: "yellow",
                             border: "1px solid lightgray",
-                            color: isDark ? "white" : "black",
+                            color: "black",
                         }}
                     >
                         In Negotiation
