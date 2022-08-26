@@ -119,7 +119,7 @@ const Projects = () => {
                   position="relative"
                   border={isDark ? "1px solid white" : "1px solid black"}
                   borderRadius="lg"
-                  w="50vw"
+                  w="70vw"
                   h="70vh"
                   mt={5}
                 >
