@@ -20,7 +20,7 @@ const SchoolProjects = ({ isDark }) => {
       description: "E-Commerce website to sell wearables",
       image:
         "https://cdn.discordapp.com/attachments/978673047772991548/1011642261299273800/group-project.gif",
-      github: "https://github.com/uanandu/project-GROUP-e-commerce",
+      github: "https://github.com/uanandu/E-Commerce_app.git",
       youtube: "",
     },
     {
