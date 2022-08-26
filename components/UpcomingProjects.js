@@ -1,6 +1,6 @@
 import { Text, VStack } from "@chakra-ui/react"
 
-const UpcomingProjects = () => {
+const UpcomingProjects = ({isDark}) => {
 
     return (
         <>
@@ -19,6 +19,7 @@ const UpcomingProjects = () => {
                             padding: "5px",
                             backgroundColor: "yellow",
                             border: "1px solid lightgray",
+                            color: isDark ? "white" : "black",
                         }}
                     >
                         In Negotiation
