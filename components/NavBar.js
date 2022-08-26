@@ -43,6 +43,7 @@ const NavBar = () => {
       display="flex"
       alignItems="center"
       justifyContent="space-between"
+      bg={isDark ? "black" : "white"}
       w="100%"
       mb={10}
       pb={2}

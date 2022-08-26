@@ -20,6 +20,14 @@ const Talk = () => {
   const isDark = colorMode === "dark";
   return (
     <>
+      <Head>
+        <title>Ananda Narayanan Udayakumar</title>
+        <meta name="description" content="Portfolio of Anandu" />
+        <link
+          rel="icon"
+          href="https://cdn.discordapp.com/attachments/978673047772991548/1010895573303427222/favicon.ico"
+        />
+      </Head>
       <VStack w="100%" h="95vh" top="10vh">
         <NavBar />
         <Flex>
