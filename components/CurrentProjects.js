@@ -29,7 +29,7 @@ const CurrentProjects = ({ isDark }) => {
                             color: "black",
                         }}
                     >
-                        In Negotiation
+                        In Progress
                     </strong>
                 </Text>
                 <Text fontSize="lg">Description: Customer Relationship Management App</Text>
