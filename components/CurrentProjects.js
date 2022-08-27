@@ -11,41 +11,29 @@ import {
 const CurrentProjects = ({ isDark }) => {
   return (
     <>
-      <VStack position="relative" display="flex" w="100%" h="100%" top="2vh" alignItems="center">
-        <Stack display="flex"justifyContent="space-around" w="80%">
-          <Text fontSize="xl" fontWeight="bold">
-            Construction Code 2.0
-          </Text>
-          <Text fontSize="xl">Client: Michael Belanger, Contractor</Text>
-          <Text fontSize="xl">Field: Construction</Text>
-          <Text fontSize="lg">
-            Status:{" "}
-            <strong
-              style={{
-                padding: "5px",
-                backgroundColor: "green",
-                color: "white",
-                border: "1px solid lightgray",
-              }}
-            >
-              In Progress
-            </strong>
-          </Text>
-          <Image
-            src="https://cdn.discordapp.com/attachments/979724631172849685/1012400782907277322/Screen_Shot_2022-08-25_at_12.39.12_PM.png"
-            w="60%"
-            h="auto"
-          />
-
-          <Text fontSize="lg">Description: Construction company website</Text>
-          <UnorderedList>
-            <Text fontSize="lg">It features the following:</Text>
-            <ListItem>Company landing page</ListItem>
-            <ListItem>Company contact page</ListItem>
-            <ListItem>Previous works</ListItem>
-          </UnorderedList>
-        </Stack>
-      </VStack>
+       <VStack>
+                <Text fontSize="2xl" fontWeight="bold">
+                    Upcoming Project
+                </Text>
+                <Text fontSize="xl" fontWeight="bold">
+                    Client: Marie-France Binette, Psychologist
+                </Text>
+                <Text fontSize="xl">Field: Psychology</Text>
+                <Text fontSize="lg">
+                    Status:{" "}
+                    <strong
+                        style={{
+                            padding: "5px",
+                            backgroundColor: "yellow",
+                            border: "1px solid lightgray",
+                            color: "black",
+                        }}
+                    >
+                        In Negotiation
+                    </strong>
+                </Text>
+                <Text fontSize="lg">Description: Customer Relationship Management App</Text>
+            </VStack>
     </>
   );
 };

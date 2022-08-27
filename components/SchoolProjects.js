@@ -21,6 +21,7 @@ const SchoolProjects = ({ isDark }) => {
       image:
         "https://cdn.discordapp.com/attachments/978673047772991548/1011642261299273800/group-project.gif",
       github: "https://github.com/uanandu/E-Commerce_app.git",
+      website: "https://e-commerce-app-iota.vercel.app",
       youtube: "",
     },
     {
