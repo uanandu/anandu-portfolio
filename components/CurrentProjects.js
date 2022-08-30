@@ -13,7 +13,7 @@ const CurrentProjects = ({ isDark }) => {
     <>
        <VStack>
                 <Text fontSize="2xl" fontWeight="bold">
-                    Upcoming Project
+                    Current Project
                 </Text>
                 <Text fontSize="xl" fontWeight="bold">
                     Client: Marie-France Binette, Psychologist
