@@ -10,7 +10,7 @@ import {
   Button,
   useMediaQuery,
   Image,
-  Spacer,
+  Link,
 } from "@chakra-ui/react";
 
 import Head from "next/head";

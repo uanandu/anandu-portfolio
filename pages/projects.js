@@ -8,6 +8,7 @@ import {
   useColorMode,
   Button,
   Box,
+  Link,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import { useState } from "react";
