@@ -8,6 +8,7 @@ import {
   Box,
   HStack,
   useMediaQuery,
+  Link,
 } from "@chakra-ui/react";
 
 import { useState } from "react";
@@ -106,18 +107,23 @@ export default function Home() {
         <HStack>
           <Stack>
             <Flex>
+              <Link href="https://github.com/uanandu">
               <IconButton
                 ml="3"
                 icon={<FaGithub />}
                 // isRound="true"
                 border={isDark ? "1px solid white" : "1px solid black"}
               />
+              </Link>
+              <Link href="https://www.linkedin.com/in/uanandu">
               <IconButton
                 ml="3"
                 icon={<FaLinkedin />}
                 // isRound="true"
                 border={isDark ? "1px solid white" : "1px solid black"}
               />
+              </Link>
+              <Link href="https://twitter.com/AnandaUdaykumar">
               <IconButton
                 ml="3"
                 mr="5"
@@ -125,6 +131,7 @@ export default function Home() {
                 // isRound="true"
                 border={isDark ? "1px solid white" : "1px solid black"}
               />
+              </Link>
             </Flex>
           </Stack>
           <Text>Portfolio made with love ❤️ by Anandu</Text>
