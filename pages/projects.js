@@ -165,19 +165,24 @@ const Projects = () => {
       <footer className={styles.footer}>
         <HStack mt={2}>
           <Stack>
-            <Flex>
+          <Flex>
+              <Link href="https://github.com/uanandu">
               <IconButton
                 ml="3"
                 icon={<FaGithub />}
                 // isRound="true"
                 border={isDark ? "1px solid white" : "1px solid black"}
               />
+              </Link>
+              <Link href="https://www.linkedin.com/in/uanandu">
               <IconButton
                 ml="3"
                 icon={<FaLinkedin />}
                 // isRound="true"
                 border={isDark ? "1px solid white" : "1px solid black"}
               />
+              </Link>
+              <Link href="https://twitter.com/AnandaUdaykumar">
               <IconButton
                 ml="3"
                 mr="5"
@@ -185,6 +190,7 @@ const Projects = () => {
                 // isRound="true"
                 border={isDark ? "1px solid white" : "1px solid black"}
               />
+              </Link>
             </Flex>
           </Stack>
           <Text>Portfolio made with love ❤️ by Anandu</Text>
