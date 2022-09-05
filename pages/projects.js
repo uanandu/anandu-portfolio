@@ -108,7 +108,7 @@ const Projects = () => {
                 border={isDark ? "1px solid white" : "1px solid black"}
                 cursor="pointer"
               >
-                Upcoming Projects
+                What am I doing now?
               </Button>
             </Flex>
             <Flex
