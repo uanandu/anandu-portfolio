@@ -6,7 +6,7 @@ const SplineComponent = () => {
     <Stack h="90vh" w="100%"
     >
       {/* <Spline scene="https://prod.spline.design/ys5vPcV6gtFKk0cN/scene.splinecode" /> */}
-      <iframe  loading="lazy" src='https://my.spline.design/untitled-7468cee9eec15f5d54a3ff3ed2793adc/' width='100%' height='100%'></iframe>
+      <iframe  loading="eager" src='https://my.spline.design/untitled-7468cee9eec15f5d54a3ff3ed2793adc/' width='100%' height='100%'></iframe>
     </Stack>
   );
 };

@@ -9,6 +9,7 @@ import {
   HStack,
   useMediaQuery,
   Link,
+  Button,
 } from "@chakra-ui/react";
 
 import { useState } from "react";
@@ -19,6 +20,7 @@ import NavBar from "../components/NavBar";
 import SplineComponent from "../components/SplineComponent";
 
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { WelcomeMessage } from "../components/WelcomeMessage";
 
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -27,6 +29,14 @@ export default function Home() {
   //states for toggle button
   const [openProject, setOpenProject] = useState(false);
   const [openTimeLine, setOpenTimeLine] = useState(false);
+
+  // states for welcome message
+  const [openWelcomeMessage, setOpenWelcomeMessage] = useState(false);
+
+  const handleWelcomeMessage = (e) => {
+    e.preventDefault();
+    setOpenWelcomeMessage(!openWelcomeMessage);
+  };
 
   const handleOpenProject = (e) => {
     e.preventDefault();
@@ -56,7 +66,7 @@ export default function Home() {
         />
       </Head>
       <VStack w="100%" h="95vh" top="10vh">
-      <NavBar />
+        <NavBar />
         <Stack
           display="flex"
           direction="row"
@@ -66,41 +76,58 @@ export default function Home() {
           h="100%"
           top="10vh"
         >
-          <SplineComponent
-            phoneScreen={phoneScreen}
-            ipadScreen={ipadScreen}
-            isNotSmallerScreen={isNotSmallerScreen}
-            isNotSmallerScreen2={isNotSmallerScreen2}
-            position="relative"
-            w="90%"
-          />
-          <Stack
-            display="flex"
-            direction={isNotSmallerScreen ? "column" : "row"}
-            justifyContent="space-evenly"
-            position="relative"
-            w="20%"
+          {openWelcomeMessage && (
+            <>
+              <SplineComponent
+                phoneScreen={phoneScreen}
+                ipadScreen={ipadScreen}
+                isNotSmallerScreen={isNotSmallerScreen}
+                isNotSmallerScreen2={isNotSmallerScreen2}
+                position="relative"
+                w="90%"
+              />
+              <Stack
+                display="flex"
+                direction={isNotSmallerScreen ? "column" : "row"}
+                justifyContent="space-evenly"
+                position="relative"
+                w="20%"
+              >
+                <Text fontSize="2xl">Hi there! 🤠</Text>
+                <Text fontSize="lg">I am</Text>
+                <Text fontSize="4xl" fontWeight="bold">
+                  Ananda Narayanan Udayakumar
+                </Text>
+                <Text fontSize="2xl">Long name, huh? Call me</Text>
+                <Text fontSize="2xl" fontWeight="bold">
+                  &apos;Anandu&apos; 😎
+                </Text>
+                <Text fontSize="xl">Now, where were we?.. oh..</Text>
+                <Text fontSize="3xl">Instructions:</Text>
+                <Text fontSize="md">
+                  - You may interact by clicking on each object to reveal my
+                  portfolio.
+                </Text>
+                <Text fontSize="md">
+                  NOTE: If you like music, you can click on the music icon to
+                  hear my music.❤️
+                </Text>
+              </Stack>
+            </>
+          )}
+          {!openWelcomeMessage && (
+            <>
+              <WelcomeMessage isDark={isDark}/>
+            </>
+          )}
+          <Button
+            onClick={handleWelcomeMessage}
+            border={isDark ? "2px solid white" : "2px solid black"}
+            position="absolute"
+            right="1vw"
           >
-            <Text fontSize="2xl">Hi there! 🤠</Text>
-            <Text fontSize="lg">I am</Text>
-            <Text fontSize="4xl" fontWeight="bold">
-              Ananda Narayanan Udayakumar
-            </Text>
-            <Text fontSize="2xl">Long name, huh? Call me</Text>
-            <Text fontSize="2xl" fontWeight="bold">
-              &apos;Anandu&apos; 😎
-            </Text>
-            <Text fontSize="xl">Now, where were we?.. oh..</Text>
-            <Text fontSize="3xl">Instructions:</Text>
-            <Text fontSize="md">
-              - You may interact by clicking on each object to reveal my
-              portfolio.
-            </Text>
-            <Text fontSize="md">
-              NOTE: If you like music, you can click on the music icon to hear
-              my music.❤️
-            </Text>
-          </Stack>
+            Click me
+          </Button>
         </Stack>
       </VStack>
       <footer className={styles.footer}>
@@ -108,29 +135,29 @@ export default function Home() {
           <Stack>
             <Flex>
               <Link href="https://github.com/uanandu">
-              <IconButton
-                ml="3"
-                icon={<FaGithub />}
-                // isRound="true"
-                border={isDark ? "1px solid white" : "1px solid black"}
-              />
+                <IconButton
+                  ml="3"
+                  icon={<FaGithub />}
+                  // isRound="true"
+                  border={isDark ? "1px solid white" : "1px solid black"}
+                />
               </Link>
               <Link href="https://www.linkedin.com/in/uanandu">
-              <IconButton
-                ml="3"
-                icon={<FaLinkedin />}
-                // isRound="true"
-                border={isDark ? "1px solid white" : "1px solid black"}
-              />
+                <IconButton
+                  ml="3"
+                  icon={<FaLinkedin />}
+                  // isRound="true"
+                  border={isDark ? "1px solid white" : "1px solid black"}
+                />
               </Link>
               <Link href="https://twitter.com/AnandaUdaykumar">
-              <IconButton
-                ml="3"
-                mr="5"
-                icon={<FaTwitter />}
-                // isRound="true"
-                border={isDark ? "1px solid white" : "1px solid black"}
-              />
+                <IconButton
+                  ml="3"
+                  mr="5"
+                  icon={<FaTwitter />}
+                  // isRound="true"
+                  border={isDark ? "1px solid white" : "1px solid black"}
+                />
               </Link>
             </Flex>
           </Stack>
