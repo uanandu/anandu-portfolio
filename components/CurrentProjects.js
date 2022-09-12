@@ -32,7 +32,12 @@ const CurrentProjects = ({ isDark }) => {
                         In Progress
                     </strong>
                 </Text>
-                <Text fontSize="lg">Description: Customer Relationship Management App</Text>
+                <Text fontSize="lg">
+                    Tool: <strong>Figma</strong>
+                </Text>
+                <Text fontSize="lg">Description: Portfolio website</Text>
+                <Image src="https://cdn.discordapp.com/attachments/978673047772991548/1018918215008653382/Screen_Shot_2022-09-12_at_12.16.52_PM.png" 
+                alt="Marie-France Binette, Psychologist" w="50%"/>
             </VStack>
     </>
   );

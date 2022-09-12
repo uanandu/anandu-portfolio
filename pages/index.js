@@ -85,49 +85,15 @@ export default function Home() {
                 isNotSmallerScreen2={isNotSmallerScreen2}
                 position="relative"
                 w="90%"
+                isDark={isDark}
               />
-              <Stack
-                display="flex"
-                direction={isNotSmallerScreen ? "column" : "row"}
-                justifyContent="space-evenly"
-                position="relative"
-                w="20%"
-              >
-                <Text fontSize="2xl">Hi there! 🤠</Text>
-                <Text fontSize="lg">I am</Text>
-                <Text fontSize="4xl" fontWeight="bold">
-                  Ananda Narayanan Udayakumar
-                </Text>
-                <Text fontSize="2xl">Long name, huh? Call me</Text>
-                <Text fontSize="2xl" fontWeight="bold">
-                  &apos;Anandu&apos; 😎
-                </Text>
-                <Text fontSize="xl">Now, where were we?.. oh..</Text>
-                <Text fontSize="3xl">Instructions:</Text>
-                <Text fontSize="md">
-                  - You may interact by clicking on each object to reveal my
-                  portfolio.
-                </Text>
-                <Text fontSize="md">
-                  NOTE: If you like music, you can click on the music icon to
-                  hear my music.❤️
-                </Text>
-              </Stack>
             </>
           )}
           {!openWelcomeMessage && (
             <>
-              <WelcomeMessage isDark={isDark}/>
+              <WelcomeMessage isDark={isDark} openWelcomeMessage={openWelcomeMessage} setOpenWelcomeMessage={setOpenWelcomeMessage}/>
             </>
           )}
-          <Button
-            onClick={handleWelcomeMessage}
-            border={isDark ? "2px solid white" : "2px solid black"}
-            position="absolute"
-            right="1vw"
-          >
-            Click me
-          </Button>
         </Stack>
       </VStack>
       <footer className={styles.footer}>

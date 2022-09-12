@@ -358,6 +358,63 @@ const Skills = ({ isDark }) => {
                   {" "}
                   <Text fontSize="lg">AWS</Text>
                 </ListItem>
+                <ListItem
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  border={isDark ? "1px solid white" : "1px solid black"}
+                  borderRadius="lg"
+                  p={1}
+                  m={1}
+                  w={150}
+                  cursor="pointer"
+                  transition="all 0.3s ease-in-out"
+                  _hover={{
+                    boxShadow: isDark ? "0px 0px 10px rgba(255, 255, 255, 0.5)" : "0px 0px 10px rgba(0, 0, 0, 0.5)",
+                    transform: "scale(1.1)",
+                  }}
+                >
+                  {" "}
+                  <Text fontSize="lg">Docker</Text>
+                </ListItem>
+                <ListItem
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  border={isDark ? "1px solid white" : "1px solid black"}
+                  borderRadius="lg"
+                  p={1}
+                  m={1}
+                  w={150}
+                  cursor="pointer"
+                  transition="all 0.3s ease-in-out"
+                  _hover={{
+                    boxShadow: isDark ? "0px 0px 10px rgba(255, 255, 255, 0.5)" : "0px 0px 10px rgba(0, 0, 0, 0.5)",
+                    transform: "scale(1.1)",
+                  }}
+                >
+                  {" "}
+                  <Text fontSize="lg">Github</Text>
+                </ListItem>
+                <ListItem
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  border={isDark ? "1px solid white" : "1px solid black"}
+                  borderRadius="lg"
+                  p={1}
+                  m={1}
+                  w={150}
+                  cursor="pointer"
+                  transition="all 0.3s ease-in-out"
+                  _hover={{
+                    boxShadow: isDark ? "0px 0px 10px rgba(255, 255, 255, 0.5)" : "0px 0px 10px rgba(0, 0, 0, 0.5)",
+                    transform: "scale(1.1)",
+                  }}
+                >
+                  {" "}
+                  <Text fontSize="lg">Travis CI</Text>
+                </ListItem>
               </UnorderedList>
           </Stack>
         </Flex>

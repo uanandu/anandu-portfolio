@@ -67,7 +67,7 @@ const Portfolio = () => {
           <Stack
             display="flex"
             alignItems="center"
-            justifyContent="space-around"
+            justifyContent="center"
             w="40%"
             pl={5}
             pr={5}
@@ -105,18 +105,6 @@ const Portfolio = () => {
                 >
                   WebDev, UI/UX Designer, and Full Stack Developer.
                 </Text>
-                {/* <Button
-                  mt={10}
-                  colorScheme="blue"
-                  onClick={() => {
-                    window.scrollTo({
-                      top: document.body.scrollHeight,
-                      behavior: "smooth",
-                    });
-                  }}
-                >
-                  Let&apos;s talk!
-                </Button> */}
               </Box>
               <Image
                 src="https://cdn.discordapp.com/attachments/978673047772991548/1009131393839808572/portfolio_image-removebg-preview.png"
@@ -129,7 +117,10 @@ const Portfolio = () => {
                 backgroundColor="transparent"
               />
             </Flex>
-            <Stack position="relative" display="flex" mt="5vh">
+            <Stack position="relative" display="flex" 
+            alignItems="center"
+            w="50%"
+            mt="5vh">
               <Text
                 fontSize="xl"
                 fontWeight="bold"
@@ -142,8 +133,9 @@ const Portfolio = () => {
                 and intuitive user experiences.
               </Text>
               <Text fontSize="xl" color={isDark ? "gray.300" : "gray.600"}>
-              &quot;Do one thing at a Time, and while doing it put your whole soul into it to the exclusion of all else.&quot;
-              - <strong>Swami Vivekananda</strong>
+                &quot;Do one thing at a Time, and while doing it put your whole
+                soul into it to the exclusion of all else.&quot; -{" "}
+                <strong>Swami Vivekananda</strong>
               </Text>
             </Stack>
           </Stack>
@@ -162,7 +154,7 @@ const Portfolio = () => {
               w="100%"
               h="100%"
               mt={10}
-              mb={10}
+              mb={20}
               position="relative"
               top="5vh"
             >
@@ -230,31 +222,31 @@ const Portfolio = () => {
       <footer className={styles.footer}>
         <HStack mt={2}>
           <Stack>
-          <Flex>
+            <Flex>
               <Link href="https://github.com/uanandu">
-              <IconButton
-                ml="3"
-                icon={<FaGithub />}
-                // isRound="true"
-                border={isDark ? "1px solid white" : "1px solid black"}
-              />
+                <IconButton
+                  ml="3"
+                  icon={<FaGithub />}
+                  // isRound="true"
+                  border={isDark ? "1px solid white" : "1px solid black"}
+                />
               </Link>
               <Link href="https://www.linkedin.com/in/uanandu">
-              <IconButton
-                ml="3"
-                icon={<FaLinkedin />}
-                // isRound="true"
-                border={isDark ? "1px solid white" : "1px solid black"}
-              />
+                <IconButton
+                  ml="3"
+                  icon={<FaLinkedin />}
+                  // isRound="true"
+                  border={isDark ? "1px solid white" : "1px solid black"}
+                />
               </Link>
               <Link href="https://twitter.com/AnandaUdaykumar">
-              <IconButton
-                ml="3"
-                mr="5"
-                icon={<FaTwitter />}
-                // isRound="true"
-                border={isDark ? "1px solid white" : "1px solid black"}
-              />
+                <IconButton
+                  ml="3"
+                  mr="5"
+                  icon={<FaTwitter />}
+                  // isRound="true"
+                  border={isDark ? "1px solid white" : "1px solid black"}
+                />
               </Link>
             </Flex>
           </Stack>

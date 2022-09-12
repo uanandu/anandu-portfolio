@@ -29,8 +29,8 @@ export const Header = () => {
           x: 0,
         }}
         transition={{
-            type: "spring",
-            duration: "2s",
+          type: "spring",
+          duration: "2s",
         }}
         direction={isNotSmallerScreen ? "row" : "column"}
         spacing={isNotSmallerScreen ? "2" : "0"}
@@ -40,16 +40,16 @@ export const Header = () => {
         borderRadius={isNotSmallerScreen ? "lg" : "none"}
         h="38vh"
       >
-         <Image
+        <Image
           src="https://cdn.discordapp.com/attachments/978673047772991548/1009131393839808572/portfolio_image-removebg-preview.png"
           alt="Anandu"
-            w="30%"
-            h="auto"
-            mt={isNotSmallerScreen ? "0" : "10"}
-            mb={isNotSmallerScreen ? "0" : "10"}
-            ml={isNotSmallerScreen ? "10" : "20"}
-            backgroundColor="transparent"
-            borderRadius="50%"
+          w="30%"
+          h="auto"
+          mt={isNotSmallerScreen ? "0" : "10"}
+          mb={isNotSmallerScreen ? "0" : "10"}
+          ml={isNotSmallerScreen ? "10" : "20"}
+          backgroundColor="transparent"
+          borderRadius="50%"
         />
         <Box mt={isNotSmallerScreen ? "0" : "20"} alignSelf="flex-start">
           <Text
