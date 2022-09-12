@@ -70,7 +70,7 @@ export default function Home() {
         <Stack
           display="flex"
           direction="row"
-          justifyContent="space-between"
+          justifyContent="space-around"
           alignItems="center"
           w="100%"
           h="100%"
