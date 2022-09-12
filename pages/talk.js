@@ -7,7 +7,9 @@ import {
   Text,
   Link,
   useColorMode,
+  Image,
 } from "@chakra-ui/react";
+
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import NavBar from "../components/NavBar";
@@ -30,13 +32,20 @@ const Talk = () => {
       </Head>
       <VStack w="100%" h="95vh" top="10vh">
         <NavBar />
-          <Stack
-            position="relative"
-            display="flex"
+        <Flex
+          position="absolute"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          top="50%"
+          left="50%"
+          transform="translate(-50%, -50%)"
+          w="60%"
+          h="75%"
+        >
+          <Stack w="100%" h="100%"
             alignItems="center"
             justifyContent="center"
-            w="100%"
-            h="100%"
           >
             <Text fontSize="9xl">Hello.</Text>
             <Text fontSize="5xl">Questions?</Text>
@@ -61,35 +70,43 @@ const Talk = () => {
               />
             </Link>
           </Stack>
+          <object
+            data="https://cdn.discordapp.com/attachments/978673047772991548/1018926897238908978/Anandu.pdf"
+            width="100%"
+            height="100%"
+            border="1px solid lightgray"
+          ></object>
+
+        </Flex>
       </VStack>
       <footer className={styles.footer}>
         <HStack mt={2}>
           <Stack>
-          <Flex>
+            <Flex>
               <Link href="https://github.com/uanandu">
-              <IconButton
-                ml="3"
-                icon={<FaGithub />}
-                // isRound="true"
-                border={isDark ? "1px solid white" : "1px solid black"}
-              />
+                <IconButton
+                  ml="3"
+                  icon={<FaGithub />}
+                  // isRound="true"
+                  border={isDark ? "1px solid white" : "1px solid black"}
+                />
               </Link>
               <Link href="https://www.linkedin.com/in/uanandu">
-              <IconButton
-                ml="3"
-                icon={<FaLinkedin />}
-                // isRound="true"
-                border={isDark ? "1px solid white" : "1px solid black"}
-              />
+                <IconButton
+                  ml="3"
+                  icon={<FaLinkedin />}
+                  // isRound="true"
+                  border={isDark ? "1px solid white" : "1px solid black"}
+                />
               </Link>
               <Link href="https://twitter.com/AnandaUdaykumar">
-              <IconButton
-                ml="3"
-                mr="5"
-                icon={<FaTwitter />}
-                // isRound="true"
-                border={isDark ? "1px solid white" : "1px solid black"}
-              />
+                <IconButton
+                  ml="3"
+                  mr="5"
+                  icon={<FaTwitter />}
+                  // isRound="true"
+                  border={isDark ? "1px solid white" : "1px solid black"}
+                />
               </Link>
             </Flex>
           </Stack>
