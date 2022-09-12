@@ -30,14 +30,13 @@ const Talk = () => {
       </Head>
       <VStack w="100%" h="95vh" top="10vh">
         <NavBar />
-        <Flex>
           <Stack
             position="relative"
             display="flex"
             alignItems="center"
-            justifyContent="space-between"
+            justifyContent="center"
             w="100%"
-            top="10vh"
+            h="100%"
           >
             <Text fontSize="9xl">Hello.</Text>
             <Text fontSize="5xl">Questions?</Text>
@@ -62,13 +61,6 @@ const Talk = () => {
               />
             </Link>
           </Stack>
-          {/* <embed
-            src="https://cdn.discordapp.com/attachments/979724631172849685/1012143130105102386/Anandu_Resume.pdf"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-          /> */}
-        </Flex>
       </VStack>
       <footer className={styles.footer}>
         <HStack mt={2}>
