@@ -50,7 +50,7 @@ export const WelcomeMessage = ({
         </Text>
         <Text fontSize="2xl">Long name, huh? Call me</Text>
         <Text fontSize="2xl" fontWeight="bold">
-          &apos;Anandu&apos; 😎
+          &apos;Han Roy&apos; 😎
         </Text>
         <Text fontSize="xl">Now, where were we?.. oh..</Text>
         <Text fontSize="xl">So, You have two options to view my portfolio.</Text>
