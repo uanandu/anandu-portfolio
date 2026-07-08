@@ -1,5 +1,37 @@
 document.getElementById('yr').textContent = new Date().getFullYear();
 
+// Subtle parallax on the portrait — pointer devices only, and never
+// when the visitor prefers reduced motion.
+(function () {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const finePointer  = window.matchMedia('(pointer: fine)');
+  const cell = document.querySelector('.cell--image');
+  const img  = cell && cell.querySelector('img');
+  if (!img || !finePointer.matches || reduceMotion.matches) return;
+
+  cell.addEventListener('mousemove', (e) => {
+    const r = cell.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width  - 0.5;
+    const y = (e.clientY - r.top)  / r.height - 0.5;
+    img.style.setProperty('--px', `${(x * -8).toFixed(1)}px`);
+    img.style.setProperty('--py', `${(y * -8).toFixed(1)}px`);
+  });
+
+  cell.addEventListener('mouseleave', () => {
+    img.style.setProperty('--px', '0px');
+    img.style.setProperty('--py', '0px');
+  });
+})();
+
+// Mad-libs inputs stretch to fit what's typed, so the sentence
+// keeps flowing naturally around longer answers.
+document.querySelectorAll('.ml-input').forEach((input) => {
+  const baseSize = input.size;
+  input.addEventListener('input', () => {
+    input.size = Math.max(baseSize, input.value.length + 1);
+  });
+});
+
 function handleResponse(event) {
   const ok     = event.detail.successful;
   const result = document.getElementById('contact-result');

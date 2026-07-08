@@ -3,8 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anandu — Portfolio</title>
-  <meta name="description" content="Portfolio of Anandu — coming soon." />
+  <title>Anandu — Fullstack &amp; DevOps Engineer</title>
+  <meta name="description" content="Portfolio of Anandu — fullstack &amp; DevOps engineer, currently consulting at Deloitte Canada. New site in progress; get in touch." />
+  <link rel="canonical" href="https://anandu.vercel.app/" />
+  <link rel="icon" href="static/favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#f5f2ed" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#171512" media="(prefers-color-scheme: dark)" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Anandu — Fullstack &amp; DevOps Engineer" />
+  <meta property="og:description" content="Portfolio of Anandu — fullstack &amp; DevOps engineer. New site in progress; get in touch." />
+  <meta property="og:url" content="https://anandu.vercel.app/" />
+  <meta property="og:image" content="https://anandu.vercel.app/static/og.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="https://anandu.vercel.app/static/og.jpg" />
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'none';
     script-src  'self' https://unpkg.com/htmx.org/;
@@ -16,7 +27,7 @@
   " />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="static/style.css" />
   <script src="https://unpkg.com/htmx.org@2.0.4"
     integrity="sha384-M06VwgoUOHG3FN0UchwWKqh9jS4ejwpoL0yjF3EVljtsxFwFETEYMkyNL5lXbJ5/"
@@ -31,21 +42,25 @@
       <span class="status-pill">In progress</span>
     </header>
 
+    <main class="contents">
+
     <!-- Row 2: image panel -->
     <div class="cell cell--image">
-      <img src="static/anandu_18bit.png" alt="Anandu" />
+      <img src="static/anandu.webp" alt="Anandu" width="798" height="1024" />
     </div>
 
     <!-- Row 2: left panel -->
     <div class="cell cell--left">
-      <p class="eyebrow" aria-label="Portfolio">
-        <span class="letter" style="--i:0">P</span><span class="letter" style="--i:1">O</span><span class="letter" style="--i:2">R</span><span class="letter" style="--i:3">T</span><span class="letter" style="--i:4">F</span><span class="letter" style="--i:5">O</span><span class="letter" style="--i:6">L</span><span class="letter" style="--i:7">I</span><span class="letter" style="--i:8">O</span>
+      <p class="eyebrow">
+        <span class="visually-hidden">Portfolio</span>
+        <span aria-hidden="true"><span class="letter">P</span><span class="letter">O</span><span class="letter">R</span><span class="letter">T</span><span class="letter">F</span><span class="letter">O</span><span class="letter">L</span><span class="letter">I</span><span class="letter">O</span></span>
       </p>
       <div class="rule-group" aria-hidden="true">
         <span></span><span></span><span></span>
       </div>
-      <p class="tagline">A new portfolio<br />is taking shape.</p>
-      <p class="sub">In the meantime,<br />reach out below.</p>
+      <h1 class="tagline">A new portfolio<br />is taking shape.</h1>
+      <p class="role">Fullstack &amp; DevOps engineer —<br />currently consulting at Deloitte Canada.</p>
+      <p class="sub">In the meantime,<br />drop me a line.</p>
     </div>
 
     <!-- Row 2: right panel -->
@@ -61,21 +76,24 @@
         <input type="hidden" name="access_key" value="7cb6a09a-57be-40cc-a191-b44d57762ef2" />
         <input type="hidden" name="subject" value="Portfolio enquiry" />
         <input type="hidden" name="from_name" value="Standby page" />
-        <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" />
+        <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
         <p class="madlibs-text">
           I'm&#32;<input
             class="ml-input" name="name" type="text"
             placeholder="your name" size="10"
             autocomplete="name" required
+            aria-label="Your name"
           />,&#32;reaching out about&#32;<input
             class="ml-input ml-wide" name="about" type="text"
             placeholder="a project, a role…" size="18"
             required
+            aria-label="What you're reaching out about"
           />. You can reply to&#32;<input
             class="ml-input ml-wide" name="email" type="email"
             placeholder="your@email.com" size="16"
             autocomplete="email" required
+            aria-label="Your email address"
           />.
         </p>
 
@@ -92,6 +110,8 @@
 
       <div id="contact-result" role="status" aria-live="polite"></div>
     </div>
+
+    </main>
 
     <!-- Row 3: footer -->
     <footer class="cell cell--footer">
