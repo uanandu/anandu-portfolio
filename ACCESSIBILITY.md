@@ -22,6 +22,9 @@ AA requires ≥ 4.5:1 for normal text. Values are token-on-background.
 | placeholder (after, muted @ full opacity) | 4.71 ✓ | 4.59 ✓ | |
 | `--clr-success` | 5.72 ✓ | 9.41 ✓ | form result |
 | `--clr-error` | 8.39 ✓ | 6.81 ✓ | form result |
+| `--clr-accent-1` (green) | 4.83 ✓ | 10.05 ✓ | sticker badge (added after initial audit) |
+| `--clr-accent-2` (violet) | 5.73 ✓ | 8.45 ✓ | sticker badge (added after initial audit) |
+| `--clr-accent-3` (orange) | 4.73 ✓ | 8.61 ✓ | sticker badge (added after initial audit) |
 
 Rule/border colors (`--clr-rule`) are decorative and exempt from contrast requirements.
 

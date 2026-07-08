@@ -23,6 +23,45 @@ document.getElementById('yr').textContent = new Date().getFullYear();
   });
 })();
 
+// Typewriter cycling through roles. Stays on the first role (static)
+// when the visitor prefers reduced motion.
+(function () {
+  const el = document.getElementById('role-word');
+  if (!el) return;
+
+  const roles = [
+    'a fullstack developer',
+    'a DevOps engineer',
+    'an AI enthusiast',
+  ];
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    el.textContent = roles[0];
+    return;
+  }
+
+  const TYPE_MS = 85, ERASE_MS = 40, HOLD_MS = 2400, GAP_MS = 400, START_MS = 3000;
+  let word = 0, chars = roles[0].length, erasing = true;
+
+  function tick() {
+    chars += erasing ? -1 : 1;
+    el.textContent = roles[word].slice(0, chars);
+
+    let delay = erasing ? ERASE_MS : TYPE_MS;
+    if (erasing && chars === 0) {
+      erasing = false;
+      word = (word + 1) % roles.length;
+      delay = GAP_MS;
+    } else if (!erasing && chars === roles[word].length) {
+      erasing = true;
+      delay = HOLD_MS;
+    }
+    setTimeout(tick, delay);
+  }
+
+  // let the entrance choreography finish before the cycle begins
+  setTimeout(tick, START_MS);
+})();
+
 // Mad-libs inputs stretch to fit what's typed, so the sentence
 // keeps flowing naturally around longer answers.
 document.querySelectorAll('.ml-input').forEach((input) => {
