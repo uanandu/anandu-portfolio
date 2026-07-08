@@ -18,20 +18,18 @@
   <meta name="twitter:image" content="https://anandu.vercel.app/static/og.jpg" />
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'none';
-    script-src  'self' https://unpkg.com/htmx.org/;
+    script-src  'self';
     style-src   'self' https://fonts.googleapis.com;
     font-src    https://fonts.gstatic.com;
     img-src     'self';
     connect-src https://api.web3forms.com;
+    form-action https://api.web3forms.com;
     frame-ancestors 'none';
   " />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="static/style.css" />
-  <script src="https://unpkg.com/htmx.org@2.0.4"
-    integrity="sha384-M06VwgoUOHG3FN0UchwWKqh9jS4ejwpoL0yjF3EVljtsxFwFETEYMkyNL5lXbJ5/"
-    crossorigin="anonymous" defer></script>
 </head>
 <body>
   <div class="grid">
@@ -73,11 +71,12 @@
 
     <!-- Row 2: right panel -->
     <div class="cell cell--right">
+      <!-- Submitted via fetch in script.js; action/method are the no-JS fallback
+           (web3forms then redirects to its own success page). -->
       <form
         id="contact-form"
-        hx-post="https://api.web3forms.com/submit"
-        hx-indicator="#form-indicator"
-        hx-on::after-request="handleResponse(event)"
+        action="https://api.web3forms.com/submit"
+        method="POST"
         class="madlibs-form"
         novalidate
       >
@@ -112,7 +111,7 @@
               <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
-          <span id="form-indicator" class="htmx-indicator sending-label">Sending…</span>
+          <span id="form-indicator" class="sending-label">Sending…</span>
         </div>
       </form>
 

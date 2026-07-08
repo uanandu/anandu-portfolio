@@ -11,7 +11,7 @@ Scope: `index.html`, `static/style.css`, `static/script.js`
 
 | # | Finding | Severity | Status |
 |---|---------|----------|--------|
-| 1 | HTMX loaded from CDN without Subresource Integrity | High | Fixed |
+| 1 | Third-party CDN script (HTMX from unpkg) | High | Removed |
 | 2 | Inline `<script>` block prevented a strict CSP | Medium | Fixed |
 | 3 | No Content Security Policy | Medium | Fixed |
 | 4 | `novalidate` with no client-side validation guard | Low | Fixed |
@@ -19,22 +19,18 @@ Scope: `index.html`, `static/style.css`, `static/script.js`
 
 ---
 
-### 1. HTMX SRI (Fixed)
+### 1. Third-party CDN Script (Removed)
 
 **Risk:** A compromised CDN (unpkg) could serve malicious JavaScript that runs with full page access.
 
-**Fix:** Added `integrity` and `crossorigin` attributes to the HTMX script tag. The browser verifies the file hash before executing it — if the file is tampered with, it is blocked.
+**Fix:** HTMX was removed entirely — the form is submitted with a plain `fetch()` in `static/script.js`, so no third-party JavaScript loads at all and `script-src` is locked to `'self'`.
 
-```html
-<script src="https://unpkg.com/htmx.org@2.0.4"
-  integrity="sha384-M06VwgoUOHG3FN0UchwWKqh9jS4ejwpoL0yjF3EVljtsxFwFETEYMkyNL5lXbJ5/"
-  crossorigin="anonymous" defer></script>
-```
-
-If HTMX is upgraded, recompute the hash:
-```bash
-curl -s https://unpkg.com/htmx.org@NEW_VERSION | openssl dgst -sha384 -binary | openssl base64 -A
-```
+> Historical note: the previous SRI hash was computed with
+> `curl -s https://unpkg.com/htmx.org@2.0.4 | openssl dgst …`, which hashes
+> unpkg's *redirect page* rather than the JavaScript file, producing a hash
+> that never matched — the browser blocked the script and the form silently
+> broke. If a CDN script is ever reintroduced, pin the full file path
+> (e.g. `…/dist/htmx.min.js`) and hash that exact URL with `curl -sL`.
 
 ---
 
@@ -42,7 +38,7 @@ curl -s https://unpkg.com/htmx.org@NEW_VERSION | openssl dgst -sha384 -binary | 
 
 **Risk:** Inline `<script>` blocks in HTML require `'unsafe-inline'` in the Content Security Policy, which weakens XSS protection significantly.
 
-**Fix:** Moved all JavaScript to `static/script.js` and loaded it with `defer`. The CSP now only allows `'self'` and the pinned HTMX URL.
+**Fix:** Moved all JavaScript to `static/script.js` and loaded it with `defer`. The CSP `script-src` now only allows `'self'`.
 
 ---
 
@@ -54,11 +50,12 @@ curl -s https://unpkg.com/htmx.org@NEW_VERSION | openssl dgst -sha384 -binary | 
 
 | Directive | Allowed |
 |-----------|---------|
-| `script-src` | `'self'`, `unpkg.com/htmx.org/` |
+| `script-src` | `'self'` |
 | `style-src` | `'self'`, `fonts.googleapis.com` |
 | `font-src` | `fonts.gstatic.com` |
 | `img-src` | `'self'` |
-| `connect-src` | `api.web3forms.com` |
+| `connect-src` | `api.web3forms.com` (fetch submission) |
+| `form-action` | `api.web3forms.com` (no-JS fallback post) |
 | `frame-ancestors` | `'none'` (blocks clickjacking) |
 | `default-src` | `'none'` (deny everything else) |
 
@@ -70,7 +67,7 @@ curl -s https://unpkg.com/htmx.org@NEW_VERSION | openssl dgst -sha384 -binary | 
 
 **Risk:** With `novalidate` on the form, browsers skip built-in validation — empty or malformed submissions reach the Web3Forms API unnecessarily.
 
-**Fix:** Added a `submit` event listener in `static/script.js` that validates all three fields and checks email format with a regex before allowing HTMX to send the request.
+**Fix:** The `submit` handler in `static/script.js` validates all three fields and checks email format with a regex before the `fetch()` request is sent.
 
 ---
 
