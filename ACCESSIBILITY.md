@@ -44,9 +44,13 @@ Rule/border colors (`--clr-rule`) are decorative and exempt from contrast requir
 - All three form inputs have `aria-label`s; decorative SVGs are `aria-hidden`
 - Form results announce via `role="status"` / `aria-live="polite"`
 - All entrance/hover animation collapses under `prefers-reduced-motion`; the only infinite animation (status dot pulse) is tiny, decorative, and also disabled
-- Pinch-zoom is not disabled; at 200% zoom the `max-height: 600px` breakpoint permits scrolling, so content reflows rather than clips (1.4.4 / 1.4.10)
+- Pinch-zoom is not disabled (1.4.4)
 - Focus outlines exist globally via `:focus-visible`
 - Dark mode is token-based, so both schemes were measured above
+
+## Known trade-off
+
+- **Fixed-viewport layout (1.4.10 reflow):** by owner decision the page is locked to the viewport height with `overflow: hidden` — it never scrolls. Compensating measures: spacing compresses below 640px height, and below 460px optional lines are dropped and type shrinks, verified by screenshot at seven viewport sizes down to 844×390. At very high zoom levels (200%+ on short windows) some content may still clip rather than reflow into a scrollable page.
 
 ## Remaining recommendations (minor, not blocking)
 

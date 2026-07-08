@@ -81,6 +81,7 @@ a { color: inherit; text-decoration: none; }
   grid-template-columns: 22vw 1fr 1.4fr;
   grid-template-rows: auto 1fr auto;
   height: 100vh;
+  height: 100dvh; /* tracks mobile browser chrome so nothing hides behind it */
 }
 
 /* ── Cells ──────────────────────────────────────────────── */
@@ -529,15 +530,35 @@ a { color: inherit; text-decoration: none; }
   .cell--image:hover img { filter: grayscale(0%) brightness(0.96); }
 }
 
-/* ── Short viewports & touch layouts: scroll, don't clip ── */
-/* dvh tracks the collapsing browser chrome on mobile Safari/Chrome */
-@media (max-height: 600px), (max-width: 1023px) {
-  html, body { overflow: auto; }
-  .grid {
-    height: auto;
-    min-height: 100vh;
-    min-height: 100dvh;
+/* ── Short viewports: compress spacing so everything fits ─ */
+@media (max-height: 640px) {
+  .cell--left,
+  .cell--right {
+    padding: clamp(0.75rem, 2vh, 1.5rem) clamp(1.25rem, 3vw, 2.5rem);
   }
+  .eyebrow { margin-bottom: 0.6rem; }
+  .rule-group { margin-bottom: 0.9rem; }
+  .tagline { margin-bottom: 0.6rem; }
+  .role { margin-bottom: 0.5rem; }
+  .madlibs-form { gap: 1.1rem; }
+  .madlibs-text { line-height: 1.75; }
+  .stickers { margin-top: 0.75rem; }
+}
+
+/* Extreme cases (landscape phones): shed optional lines, shrink type */
+@media (max-height: 460px) {
+  .sub, .stickers { display: none; }
+  .cell--header, .cell--footer { padding-top: 0.6rem; padding-bottom: 0.6rem; }
+
+  .cell--left, .cell--right { padding: 0.75rem 1.25rem; }
+  .eyebrow { font-size: 1.4rem; margin-bottom: 0.4rem; }
+  .rule-group { margin-bottom: 0.6rem; }
+  .rule-group span { height: 2px; }
+  .tagline { font-size: 1.15rem; margin-bottom: 0.4rem; }
+  .role { margin-bottom: 0; }
+  .tagline br, .role br { display: none; } /* single lines buy vertical room */
+  .madlibs-text { font-size: 1rem; line-height: 1.7; }
+  .madlibs-form { gap: 0.75rem; }
 }
 
 /* ── Reduced motion ─────────────────────────────────────── */
