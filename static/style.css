@@ -548,14 +548,14 @@ a { color: inherit; text-decoration: none; }
   color: var(--clr-muted);
 }
 
-.visitor-count {
+.visitor-count.sticker {
   --tilt: 2deg;
   --accent: #b84040;
   animation-delay: 1.1s;
 }
 
 @media (prefers-color-scheme: dark) {
-  .visitor-count { --accent: #e07070; }
+  .visitor-count.sticker { --accent: #e07070; }
 }
 
 .people-icon {
