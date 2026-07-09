@@ -1,5 +1,3 @@
-document.getElementById('yr').textContent = new Date().getFullYear();
-
 // Visitor counter — persists per-browser, counts up with a roll animation.
 (function () {
   const BASE = 63;
