@@ -1,5 +1,35 @@
 document.getElementById('yr').textContent = new Date().getFullYear();
 
+// Visitor counter — persists per-browser, counts up with a roll animation.
+(function () {
+  const BASE = 63;
+  const delta = parseInt(localStorage.getItem('vc') || '0', 10);
+  localStorage.setItem('vc', delta + 1);
+  const target = BASE + delta;
+  const el = document.getElementById('visitor-count');
+  if (!el) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    el.textContent = target.toLocaleString();
+    return;
+  }
+
+  const DURATION = 900, START_DELAY = 1400;
+  const start = Math.max(0, target - Math.min(target, 30));
+  let startTime = null;
+
+  function ease(t) { return 1 - Math.pow(1 - t, 3); }
+
+  setTimeout(() => {
+    requestAnimationFrame(function step(now) {
+      if (!startTime) startTime = now;
+      const t = Math.min((now - startTime) / DURATION, 1);
+      el.textContent = Math.round(start + (target - start) * ease(t)).toLocaleString();
+      if (t < 1) requestAnimationFrame(step);
+    });
+  }, START_DELAY);
+})();
+
 // Subtle parallax on the portrait — pointer devices only, and never
 // when the visitor prefers reduced motion.
 (function () {

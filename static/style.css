@@ -548,6 +548,22 @@ a { color: inherit; text-decoration: none; }
   color: var(--clr-muted);
 }
 
+.visitor-count {
+  --tilt: 2deg;
+  --accent: #b84040;
+  animation-delay: 1.1s;
+}
+
+@media (prefers-color-scheme: dark) {
+  .visitor-count { --accent: #e07070; }
+}
+
+.people-icon {
+  vertical-align: middle;
+  margin-right: 0.25em;
+  margin-top: -0.1em;
+}
+
 .footer-links {
   display: flex;
   gap: 1.75rem;
