@@ -301,6 +301,19 @@ a { color: inherit; text-decoration: none; }
   animation: riseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.65s both;
 }
 
+.deloitte-brand {
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.3em;
+  letter-spacing: -0.01em;
+  color: var(--clr-ink);
+}
+
+.deloitte-dot {
+  color: #86BC25;
+}
+
 .role-word {
   font-family: var(--font-display);
   font-style: italic;
@@ -359,6 +372,15 @@ a { color: inherit; text-decoration: none; }
 
 @keyframes stickerPop {
   from { opacity: 0; transform: scale(0.4) rotate(var(--tilt, -2deg)); }
+}
+
+.meta-line {
+  font-size: clamp(0.6rem, 0.55rem + 0.25vw, 0.7rem);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--clr-muted);
+  margin-bottom: 0.85rem;
+  animation: riseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.72s both;
 }
 
 .sub {
@@ -517,6 +539,27 @@ a { color: inherit; text-decoration: none; }
   background: var(--clr-ink);
   vertical-align: text-bottom;
   animation: caretBlink 1.1s steps(2, start) infinite;
+}
+
+/* ── Direct email fallback ──────────────────────────────── */
+.direct-email {
+  margin-top: 1.25rem;
+  font-size: 0.63rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--clr-muted);
+  animation: riseIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 1s both;
+}
+
+.direct-email a {
+  color: var(--clr-ink-2);
+  border-bottom: 1px solid var(--clr-rule);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.direct-email a:hover {
+  color: var(--clr-ink);
+  border-color: var(--clr-ink);
 }
 
 /* ── Result ─────────────────────────────────────────────── */
