@@ -591,92 +591,6 @@ a { color: inherit; text-decoration: none; }
 .result--success { color: var(--clr-success); }
 .result--error   { color: var(--clr-error); }
 
-/* ── Puppet stage ───────────────────────────────────────── */
-.cell--stage { display: none; overflow: hidden; }   /* desktop: off */
-
-.stage-inner {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: clamp(1rem, 3vh, 2rem) clamp(0.75rem, 2vw, 1.5rem) 0;
-}
-
-.stage-bar {
-  height: 2px;
-  background: var(--clr-ink);
-  border-radius: 1px;
-  flex-shrink: 0;
-}
-
-.stage-puppets {
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  flex: 1;
-  padding-top: 0;
-}
-
-.puppet {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform-origin: top center;
-  animation: puppet-swing ease-in-out infinite alternate;
-  cursor: default;
-}
-
-.puppet:hover { animation-play-state: paused; }
-
-.puppet-string {
-  width: 1px;
-  height: var(--str, 3rem);
-  background: var(--clr-muted);
-  opacity: 0.6;
-}
-
-.puppet-tag {
-  font-family: var(--font-accent);
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--clr-bg);
-  background: var(--accent, var(--clr-ink));
-  padding: 0.28rem 0.55rem;
-  border: 1.5px solid transparent;
-  border-radius: 999px;
-  white-space: nowrap;
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.puppet:hover .puppet-tag { transform: scale(1.12) rotate(0deg); }
-
-.puppet--1 {
-  --str: 2rem;
-  --accent: var(--clr-accent-1);
-  animation-duration: 3.4s;
-  animation-delay: 0s;
-}
-.puppet--2 {
-  --str: 3.75rem;
-  --accent: var(--clr-accent-2);
-  animation-duration: 2.6s;
-  animation-delay: -1.4s;
-  animation-direction: alternate-reverse;
-}
-.puppet--2 .puppet-tag { border-style: dashed; border-color: var(--clr-bg); }
-.puppet--3 {
-  --str: 2.75rem;
-  --accent: var(--clr-accent-3);
-  animation-duration: 3.9s;
-  animation-delay: -0.8s;
-}
-
-@keyframes puppet-swing {
-  from { transform: rotate(-9deg); }
-  to   { transform: rotate(9deg); }
-}
-
 /* ── Footer ─────────────────────────────────────────────── */
 .visitor-count.sticker {
   --tilt: 2deg;
@@ -762,63 +676,12 @@ a { color: inherit; text-decoration: none; }
     Row 2: info text (full width)
     Row 3: image (left col) | form (right col)
     Row 4: footer (full width)                 */
-@media (max-width: 1023px) and (min-width: 481px) {
-  .grid {
-    grid-template-columns: 2fr 3fr;
-    grid-template-rows: auto auto minmax(0, 1fr) auto;
-  }
-
-  .cell--header {
-    grid-column: 1 / -1;
-    grid-row: 1;
-  }
-
-  /* Left panel: col 1 only — stickers live in the stage */
-  .cell--left {
-    grid-column: 1;
-    grid-row: 2;
-    padding: 1.25rem clamp(1rem, 3vw, 2rem);
-    justify-content: flex-start;
-  }
-  .cell--left .stickers { display: none; }
-
-  /* Puppet stage: col 2, same row as left panel */
-  .cell--stage {
-    display: block;
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .cell--image {
-    grid-column: 1;
-    grid-row: 3;
-    height: auto;
-  }
-
-  .cell--image img {
-    object-fit: cover;
-    object-position: center top;
-  }
-
-  .cell--right {
-    grid-column: 2;
-    grid-row: 3;
-    padding: clamp(1.25rem, 3vh, 2rem) clamp(1.25rem, 3vw, 2rem);
-    justify-content: center;
-  }
-
-  .cell--footer {
-    grid-column: 1 / -1;
-    grid-row: 4;
-  }
-}
-
-/* ── Phone (≤ 480px) ────────────────────────────────────── */
+/* ── Tablet + Phone (≤ 1023px) ──────────────────────────── */
 /*  Row 1: header (full width)
     Row 2: info text (full width)
     Row 3: image (left col) | form (right col)
     Row 4: footer (full width)                  */
-@media (max-width: 480px) {
+@media (max-width: 1023px) {
   .grid {
     grid-template-columns: 2fr 3fr;
     grid-template-rows: auto auto minmax(0, 1fr) auto;
@@ -829,11 +692,10 @@ a { color: inherit; text-decoration: none; }
   .cell--left {
     grid-column: 1 / -1;
     grid-row: 2;
-    padding: 1rem 1.25rem;
+    padding: clamp(1rem, 3vw, 1.5rem) clamp(1.25rem, 4vw, 2rem);
     justify-content: flex-start;
   }
 
-  /* Portrait stays — puppet stage is tablet-only */
   .cell--image {
     grid-column: 1;
     grid-row: 3;
@@ -847,22 +709,21 @@ a { color: inherit; text-decoration: none; }
   .cell--right {
     grid-column: 2;
     grid-row: 3;
-    padding: 1rem 0.85rem;
+    padding: clamp(1rem, 3vw, 1.5rem) clamp(0.85rem, 2.5vw, 1.5rem);
     justify-content: center;
   }
 
   .cell--footer {
     grid-column: 1 / -1;
     grid-row: 4;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem clamp(1rem, 3vw, 1.5rem);
   }
 
-.sub { display: none; }
+  .sub { display: none; }
   .stickers { display: none; }
   .madlibs-form { gap: 0.85rem; }
   .ml-input { min-width: 4ch; }
 
-  /* Visitor count: compact pill so it fits in the footer between © and links */
   .visitor-count.sticker {
     --tilt: 0deg;
     font-size: 1rem;
